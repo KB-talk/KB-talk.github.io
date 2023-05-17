@@ -1,1 +1,1 @@
-var posts=["2023/05/06/C-学习笔记/","2023/05/03/Latex安装与配置/","2023/05/06/clash赋予brew新生/","2023/04/17/文献管理一个zetero足够了/","2023/05/17/机器人控制原理/","2023/04/19/海凌科指纹模块/","2023/04/25/轻松学数学/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["2023/05/06/C-学习笔记/","2023/05/06/clash赋予brew新生/","2023/04/17/文献管理一个zetero足够了/","2023/04/19/海凌科指纹模块/","2023/05/17/机器人控制原理/","2023/04/25/轻松学数学/","2023/05/03/Latex安装与配置/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
