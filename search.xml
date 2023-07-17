@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>使用picx搭建免费图床</title>
+      <link href="/2023/07/18/%E4%BD%BF%E7%94%A8picx%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/"/>
+      <url>/2023/07/18/%E4%BD%BF%E7%94%A8picx%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
+      
+        <content type="html"><![CDATA[<h1 id="图床的作用"><a href="#图床的作用" class="headerlink" title="图床的作用"></a>图床的作用</h1><p>在使用markdown写文章以及博客的时候，经常会需要插入图片，刚开始会使用嵌入本地图片的方法，但经常因为路径的不正确导致文章内的图片不能显示，而且使用本地图片的时候需要建立文件夹来存放图片，这样项目文件就会多出很多文件夹使项目变得杂乱。使用图传就可以解决上述的所有问题，使用图床中的图片会加速图片的加载，而且解决了图片无法正常显示的问题，可以使用简单语句实现图片的插入。</p><h1 id="图床的选择"><a href="#图床的选择" class="headerlink" title="图床的选择"></a>图床的选择</h1><p>目前图床有很多种，有免费的也有收费的，不同的图床的容量也不一样，<a href="https://blog.anheyu.com/posts/2785.html">这篇文章对图床有很详细的介绍</a>。</p><p>综合来看，使用自建图床应该是最好的方案。由于没有服务器以及没有PHP的基础，将采用GitHub与picx的方案构建自己的图床。虽然一个仓库只有1G的容量，而且存在被封的风险（不可控），综合实际情况，此方案仍然是较好的方案。</p><h1 id="在GitHub中生成-access-tokens"><a href="#在GitHub中生成-access-tokens" class="headerlink" title="在GitHub中生成 access tokens"></a>在GitHub中生成 access tokens</h1><p>1.进入GitHub，登陆自己的账号。点击自己的头像，选择settings。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.19.18.4evaqmg427q0.jpg" alt="iShot_2023-07-17_22"></p><p>2.进入界面，下拉找到Developer settings<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.20.49.4ozb7dckep2.jpg" alt="iShot_2023-07-17_22"></p><p>3.点击进入，选择Tokens，生成一个新的Tokens<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.22.47.38gm3nrwffc0.jpg" alt="iShot_2023-07-17_22"></p><p>4.输入名称，并在repo处进行选择<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.24.36.is9mkmpl3s8.jpg" alt="iShot_2023-07-17_22"></p><p>5.在最下方，点击生成一个tokens，在此时会生成一串序列</p><blockquote><p>此序列只会显示一次，一定要保存好，点击复制，存储到一个不会丢失的地方。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.25.58.1uz7bb64egkg.jpg" alt="iShot_2023-07-17_22"></p></blockquote><p>6.到此最重要的Tokens已经获得。</p><h1 id="使用Picx搭建图床"><a href="#使用Picx搭建图床" class="headerlink" title="使用Picx搭建图床"></a>使用Picx搭建图床</h1><p>1.<a href="https://picx.xpoet.cn/#/upload">点击进入Picx的网页</a>。</p><p>2.输入刚刚获得的Tokens。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.31.48.4b62r696b4w0.jpg" alt="iShot_2023-07-17_22"></p><p>3.点击一键自动配置，就会在你的GitHub中生成一个对应的仓库，生成完成后会看见用户名，新建的仓库的名称以及分支等信息。我们可以在目录模式处选择目录。</p><blockquote><p>此目录为存放图片文件的文件夹的名称。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.32.30.4onb21pyexk0.jpg" alt="iShot_2023-07-17_22"></p></blockquote><p>4.回到上传图片，可以看到即将上传的位置。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.33.22.7aoefvejnoo0.jpg" alt="iShot_2023-07-17_22"></p><p>5.将图片文件拖入或者选择上传，点击上传，即可完成图片的上传任务。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.37.34.w6n4rxp9ppc.jpg" alt="iShot_2023-07-17_22"></p><p>6.进入图床管理，可以查看图床中的图片以及对图片进行管理，如重命名以及删除等。</p><blockquote><p>图片的重命名，会生成一个以新名称的图片，原图片不会删除<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.39.05.529gle0kwi40.jpg" alt="iShot_2023-07-17_22"></p></blockquote><p>7.成功上传后，在我们的GitHub中可以产看到，多了一个仓库，上传的图片也存在于对应的文件夹中。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.38.51.31264re0x9q0.jpg" alt="iShot_2023-07-17_22"></p><p>8.当仓库中存在文件夹后，目录模式会新增一个选项，可以选择存在的文件夹。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.39.51.57yuuhpznvs0.jpg" alt="iShot_2023-07-17_22"></p><h1 id="Picx的使用"><a href="#Picx的使用" class="headerlink" title="Picx的使用"></a>Picx的使用</h1><p>在我的设置中，有图片压缩，图片名称，添加水印等功能，根据需求自行设置。</p><p>当我们需要插入图片时，进入图床管理，点击复制图片链接即可，在markdown中粘贴即可完成图片的插入。</p><blockquote><p>在设置中，图片链接格式已选择markdown</p></blockquote><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>使用此方法可以解决图片的插入问题，同一张图片被多次不同位置使用时，尤其有效，完美的解决了图片路径的困扰。</p><p>面对GitHub只有1G的存储空间的问题，上传的图片通常只有几十k大小，一个仓库可以存放大量的图片了。当有新的工程时，可以使用上述的方法新建对应的仓库，这样就无需担心存储空间的问题了。</p><p>如果担心仓库被封的话，还是搭建自己的图床，或者购买大公司的图床比较好。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 图床 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/07/16/hello-world/"/>
       <url>/2023/07/16/hello-world/</url>
@@ -61,6 +86,33 @@
     
     
     <entry>
+      <title>Clash赋予brew新生</title>
+      <link href="/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/"/>
+      <url>/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>VPN已经用了很长时间了，经常都是用在访问GitHub，今天在使用brew安装第三方库的时候，经常因为速度下载失败，这时候突然想起能不能用VPN来加速brew下载呢.<br>使用Clash打开vpn，在使用brew时并没有起到加速作用。在clash中看见一个选项，<code>复制终端代理命令</code>。</p><h1 id="如何使用clash加速brew下载"><a href="#如何使用clash加速brew下载" class="headerlink" title="如何使用clash加速brew下载"></a>如何使用clash加速brew下载</h1><p>1.进入clash界面，选择复制终端代理命令</p><p><img src="clash赋予brew新生/1683376224885.png" alt="1683376224885"></p><p>2.打开终端，在终端中输入刚刚复制的命令，按下回车即可</p><p><img src="clash赋予brew新生/1683376438035.png" alt="1683376438035"></p><p>3.接下来使用brew下载即可</p><p>此时会发现brew下载会非常的迅速了，不会因为下载速度而失败了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解决方法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Clash </tag>
+            
+            <tag> brew加速 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++学习笔记</title>
       <link href="/2023/05/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2023/05/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
@@ -82,33 +134,6 @@
             <tag> OpenCV </tag>
             
             <tag> Eigen </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Clash赋予brew新生</title>
-      <link href="/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/"/>
-      <url>/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>VPN已经用了很长时间了，经常都是用在访问GitHub，今天在使用brew安装第三方库的时候，经常因为速度下载失败，这时候突然想起能不能用VPN来加速brew下载呢.<br>使用Clash打开vpn，在使用brew时并没有起到加速作用。在clash中看见一个选项，<code>复制终端代理命令</code>。</p><h1 id="如何使用clash加速brew下载"><a href="#如何使用clash加速brew下载" class="headerlink" title="如何使用clash加速brew下载"></a>如何使用clash加速brew下载</h1><p>1.进入clash界面，选择复制终端代理命令</p><p><img src="clash赋予brew新生/1683376224885.png" alt="1683376224885"></p><p>2.打开终端，在终端中输入刚刚复制的命令，按下回车即可</p><p><img src="clash赋予brew新生/1683376438035.png" alt="1683376438035"></p><p>3.接下来使用brew下载即可</p><p>此时会发现brew下载会非常的迅速了，不会因为下载速度而失败了。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 解决方法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Clash </tag>
-            
-            <tag> brew加速 </tag>
             
         </tags>
       
