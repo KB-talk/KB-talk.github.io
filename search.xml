@@ -86,6 +86,33 @@
     
     
     <entry>
+      <title>Clash赋予brew新生</title>
+      <link href="/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/"/>
+      <url>/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>VPN已经用了很长时间了，经常都是用在访问GitHub，今天在使用brew安装第三方库的时候，经常因为速度下载失败，这时候突然想起能不能用VPN来加速brew下载呢.<br>使用Clash打开vpn，在使用brew时并没有起到加速作用。在clash中看见一个选项，<code>复制终端代理命令</code>。</p><h1 id="如何使用clash加速brew下载"><a href="#如何使用clash加速brew下载" class="headerlink" title="如何使用clash加速brew下载"></a>如何使用clash加速brew下载</h1><p>1.进入clash界面，选择复制终端代理命令</p><p><img src="clash赋予brew新生/1683376224885.png" alt="1683376224885"></p><p>2.打开终端，在终端中输入刚刚复制的命令，按下回车即可</p><p><img src="clash赋予brew新生/1683376438035.png" alt="1683376438035"></p><p>3.接下来使用brew下载即可</p><p>此时会发现brew下载会非常的迅速了，不会因为下载速度而失败了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解决方法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Clash </tag>
+            
+            <tag> brew加速 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++学习笔记</title>
       <link href="/2023/05/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2023/05/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
@@ -107,33 +134,6 @@
             <tag> OpenCV </tag>
             
             <tag> Eigen </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Clash赋予brew新生</title>
-      <link href="/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/"/>
-      <url>/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>VPN已经用了很长时间了，经常都是用在访问GitHub，今天在使用brew安装第三方库的时候，经常因为速度下载失败，这时候突然想起能不能用VPN来加速brew下载呢.<br>使用Clash打开vpn，在使用brew时并没有起到加速作用。在clash中看见一个选项，<code>复制终端代理命令</code>。</p><h1 id="如何使用clash加速brew下载"><a href="#如何使用clash加速brew下载" class="headerlink" title="如何使用clash加速brew下载"></a>如何使用clash加速brew下载</h1><p>1.进入clash界面，选择复制终端代理命令</p><p><img src="clash赋予brew新生/1683376224885.png" alt="1683376224885"></p><p>2.打开终端，在终端中输入刚刚复制的命令，按下回车即可</p><p><img src="clash赋予brew新生/1683376438035.png" alt="1683376438035"></p><p>3.接下来使用brew下载即可</p><p>此时会发现brew下载会非常的迅速了，不会因为下载速度而失败了。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 解决方法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Clash </tag>
-            
-            <tag> brew加速 </tag>
             
         </tags>
       
