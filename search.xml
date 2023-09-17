@@ -6,9 +6,9 @@
     <content><![CDATA[<h1 id="相关下载"><a href="#相关下载" class="headerlink" title="相关下载"></a>相关下载</h1><p>Mac Latex下载地址：<a href="https://tug.org/mactex/mactex-download.html">官网下载链接</a>（安装后需要重启）<br>vs code下载地址：<a href="https://code.visualstudio.com/Download">官网下载地址</a></p>
 <p>vs code插件：<code>LaTeX Workshop</code></p>
 <p>打开vscode，左边工具栏里有个<strong>扩展</strong>栏，选中它！再在搜索框里面搜索 <strong><code>LaTeX Workshop</code></strong> ，如下图所示。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/Latex安装与配置/LaTeX插件.44wsh1bqnog0.webp" alt="LaTeX插件"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/Latex安装与配置/LaTeX插件.2qnezkscek20.jpg" alt="LaTeX插件"></p>
 <h1 id="vs-code相关配置"><a href="#vs-code相关配置" class="headerlink" title="vs code相关配置"></a>vs code相关配置</h1><p>在vscode页面，按下 <code>f1</code>，输入 <code>json</code>，选择 <code>首选项</code>：打开设置这一项，如下图所示。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/Latex安装与配置/首选项.2a37t0qnxgn4.webp" alt="首选项"><br>如果使用vs code配置过其他插件，在其末尾继续添加以下内容(注意：添加时，需要在存在的末尾处添加逗号)：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/Latex安装与配置/首选项.4ova6els8h60.jpg" alt="首选项"><br>如果使用vs code配置过其他插件，在其末尾继续添加以下内容(注意：添加时，需要在存在的末尾处添加逗号)：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;latex-workshop.latex.tools&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.recipes&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xe-&gt;bib-&gt;xe-&gt;xe&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdf-&gt;bib-&gt;pdf-&gt;pdf&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.clean.fileTypes&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;*.aux&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.bbl&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.blg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.idx&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.ind&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.lof&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.lot&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.out&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.toc&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.acn&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.acr&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.alg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.glg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.glo&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.gls&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.ist&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.fls&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.log&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.fdb_latexmk&quot;</span></span><br><span class="line">],</span><br><span class="line"><span class="comment">//tex文件浏览器，可选项为&quot;none&quot; &quot;browser&quot; &quot;tab&quot; &quot;external&quot;</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.viewer&quot;</span>: <span class="string">&quot;tab&quot;</span>,</span><br><span class="line"><span class="comment">//自动编译tex文件</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoBuild.run&quot;</span>: <span class="string">&quot;onFileChange&quot;</span>,</span><br><span class="line"><span class="comment">//显示内容菜单：（1）编译文件；（2）定位游标</span></span><br><span class="line"><span class="string">&quot;latex-workshop.showContextMenu&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="comment">//显示错误</span></span><br><span class="line"><span class="string">&quot;latex-workshop.message.error.show&quot;</span>: <span class="literal">false</span>,</span><br><span class="line"><span class="comment">//显示警告</span></span><br><span class="line"><span class="string">&quot;latex-workshop.message.warning.show&quot;</span>: <span class="literal">false</span>,</span><br><span class="line"><span class="comment">//从使用的包中自动补全命令和环境</span></span><br><span class="line"><span class="string">&quot;latex-workshop.intellisense.package.enabled&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="comment">//设置为never，为不清除辅助文件</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoClean.run&quot;</span>: <span class="string">&quot;never&quot;</span>,</span><br><span class="line"><span class="comment">//设置vscode编译tex文档时的默认编译链</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.recipe.default&quot;</span>: <span class="string">&quot;lastUsed&quot;</span>,</span><br><span class="line"><span class="comment">// 用于反向同步的内部查看器的键绑定。ctrl/cmd +点击(默认)或双击</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.internal.synctex.keybinding&quot;</span>: <span class="string">&quot;double-click&quot;</span>,</span><br></pre></td></tr></table></figure>
 <h1 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h1><p>从IEEE中下载一篇模版，<a href="https://template-selector.ieee.org/secure/templateSelector/downloadTemplate?publicationTypeId=2&amp;titleId=163&amp;articleId=3&amp;fileId=297">模版下载链接</a>。</p>
 <p>使用vs code打开模版，选择编辑器，编辑后在右侧打开pdf进行预览查看。</p>
@@ -34,6 +34,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Clash赋予brew新生</title>
+    <url>/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/</url>
+    <content><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>VPN已经用了很长时间了，经常都是用在访问GitHub，今天在使用brew安装第三方库的时候，经常因为速度下载失败，这时候突然想起能不能用VPN来加速brew下载呢.<br>使用Clash打开vpn，在使用brew时并没有起到加速作用。在clash中看见一个选项，<code>复制终端代理命令</code>。</p>
+<h1 id="如何使用clash加速brew下载"><a href="#如何使用clash加速brew下载" class="headerlink" title="如何使用clash加速brew下载"></a>如何使用clash加速brew下载</h1><p>1.进入clash界面，选择复制终端代理命令</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/clash赋予brew新生/clash界面.4u76t0zzdh20.jpg" alt="clash界面"></p>
+<p>2.打开终端，在终端中输入刚刚复制的命令，按下回车即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/clash赋予brew新生/应用.3s9laykl2460.jpg" alt="应用"></p>
+<p>3.接下来使用brew下载即可</p>
+<p>此时会发现brew下载会非常的迅速了，不会因为下载速度而失败了。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Clash</tag>
+        <tag>brew加速</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gergebra的嵌入方法</title>
+    <url>/2023/07/15/gergebra%E7%9A%84%E5%B5%8C%E5%85%A5%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="进入geogebra进行图形的制作"><a href="#进入geogebra进行图形的制作" class="headerlink" title="进入geogebra进行图形的制作"></a>进入geogebra进行图形的制作</h1><p>geogebra是优秀的数学绘图工具，可以描述数学图像并演示，支持互动，功能强大。<a href="https://www.geogebra.org/download" title="geogebra首页">点击进入geogebra官网</a></p>
+<p>进入首页，选择需要的数学计算器工具，进入计算器。</p>
+<h1 id="进行图形的绘制"><a href="#进行图形的绘制" class="headerlink" title="进行图形的绘制"></a>进行图形的绘制</h1><p>在编辑器中绘制需要的图形</p>
+<h1 id="点击在线保存"><a href="#点击在线保存" class="headerlink" title="点击在线保存"></a>点击在线保存</h1><h1 id="获取链接"><a href="#获取链接" class="headerlink" title="获取链接"></a>获取链接</h1><h2 id="在弹窗中点击分享，或者在打开中选择对应的图形"><a href="#在弹窗中点击分享，或者在打开中选择对应的图形" class="headerlink" title="在弹窗中点击分享，或者在打开中选择对应的图形"></a>在弹窗中点击分享，或者在打开中选择对应的图形</h2><p>点击查看</p>
+<h2 id="在右上角，选择详细信息"><a href="#在右上角，选择详细信息" class="headerlink" title="在右上角，选择详细信息"></a>在右上角，选择详细信息</h2><h2 id="选择分享，选择嵌入选项，点击显示更多"><a href="#选择分享，选择嵌入选项，点击显示更多" class="headerlink" title="选择分享，选择嵌入选项，点击显示更多"></a>选择分享，选择嵌入选项，点击显示更多</h2><h2 id="设置嵌入的图像的功能"><a href="#设置嵌入的图像的功能" class="headerlink" title="设置嵌入的图像的功能"></a>设置嵌入的图像的功能</h2><h3 id="更改程序大小"><a href="#更改程序大小" class="headerlink" title="更改程序大小"></a>更改程序大小</h3><p>宽度选择800即可，高度会自动设置</p>
+<h2 id="设置显示配置"><a href="#设置显示配置" class="headerlink" title="设置显示配置"></a>设置显示配置</h2><p>选中重置作图图标<br>选中单击加载（可选）</p>
+<h3 id="设置小程序设置"><a href="#设置小程序设置" class="headerlink" title="设置小程序设置"></a>设置小程序设置</h3><p>选中支持上档键移动和缩放</p>
+<h3 id="复制链接"><a href="#复制链接" class="headerlink" title="复制链接"></a>复制链接</h3><p>点击复制按钮，复制生成的链接</p>
+<h1 id="在博客中嵌入"><a href="#在博客中嵌入" class="headerlink" title="在博客中嵌入"></a>在博客中嵌入</h1><p>在博客中输入复制的链接即可</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;iframe scrolling=<span class="string">&quot;no&quot;</span> title=<span class="string">&quot;未命名&quot;</span> src=<span class="string">&quot;https://www.geogebra.org/material/iframe/id/e47uzmwh/width/800/height/461/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/true&quot;</span> width=<span class="string">&quot;800px&quot;</span> height=<span class="string">&quot;461px&quot;</span> style=<span class="string">&quot;border:0px;&quot;</span>&gt; &lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+<p>插入的效果如下：</p>
+<iframe scrolling="no" title="未命名" src="https://www.geogebra.org/material/iframe/id/e47uzmwh/width/800/height/461/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/true" width="800px" height="461px" style="border:0px;">` `</iframe>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>gergebra</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++学习笔记</title>
     <url>/2023/05/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>MacOS venture13</p>
@@ -51,8 +93,8 @@
 <p>本机目录：/opt/homebrew/Cellar/opencv/4.7.0_4/include/opencv4</p>
 <p>在工程文件中的 <code>CMakeLists.list</code>中添加</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">include_directories( &quot;/opt/homebrew/Cellar/opencv/4.7.0_4/include/opencv4&quot; )</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/C++学习笔记/CMakeLists.4xaqyf57ifs0.jpg" alt="CMakeLists"></p>
-<h1 id="Clion使用篇"><a href="#Clion使用篇" class="headerlink" title="Clion使用篇"></a>Clion使用篇</h1><h2 id="更改文件注释模版"><a href="#更改文件注释模版" class="headerlink" title="更改文件注释模版"></a>更改文件注释模版</h2><p>使用自己的文件注释模版会让自己对文件的内容更为了解，通过下面的更改会自动生成自己喜欢的注释模版，在新建文件时会自动生成，无需手动输入。<br>1、进入设置<br><code>设置</code>=&gt;<code>编辑器</code>=&gt;<code>文件和代码模版</code><br>2、更改模版<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/C++学习笔记/更改模版.5ezpnavp7hw0.jpg" alt="更改模版"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/C++学习笔记/CMakeLists.4xaqyf57ifs0.jpg" alt="CMakeLists"></p>
+<h1 id="Clion使用篇"><a href="#Clion使用篇" class="headerlink" title="Clion使用篇"></a>Clion使用篇</h1><h2 id="更改文件注释模版"><a href="#更改文件注释模版" class="headerlink" title="更改文件注释模版"></a>更改文件注释模版</h2><p>使用自己的文件注释模版会让自己对文件的内容更为了解，通过下面的更改会自动生成自己喜欢的注释模版，在新建文件时会自动生成，无需手动输入。<br>1、进入设置<br><code>设置</code>=&gt;<code>编辑器</code>=&gt;<code>文件和代码模版</code><br>2、更改模版<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/C++学习笔记/更改模版.5ezpnavp7hw0.jpg" alt="更改模版"></p>
 <p>在模版处输入下面代码</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#if ($HEADER_COMMENTS)</span></span><br><span class="line">/********************************************************************************</span><br><span class="line">  * @文件名          : <span class="variable">$&#123;FILE_NAME&#125;</span></span><br><span class="line">  * @作者            : <span class="variable">$USER_NAME</span></span><br><span class="line">  * @日期            : <span class="variable">$&#123;DATE&#125;</span></span><br><span class="line">*******************************************************************************/</span><br><span class="line"><span class="comment">#if ($ORGANIZATION_NAME &amp;&amp; $ORGANIZATION_NAME != &quot;&quot;)</span></span><br><span class="line">// Copyright (c) <span class="variable">$YEAR</span> <span class="variable">$&#123;ORGANIZATION_NAME&#125;</span><span class="comment">#if (!$ORGANIZATION_NAME.endsWith(&quot;.&quot;)).#end All rights reserved.</span></span><br><span class="line"><span class="comment">#end</span></span><br><span class="line"><span class="comment">#end</span></span><br></pre></td></tr></table></figure>
 <h2 id="自动生成函数注释"><a href="#自动生成函数注释" class="headerlink" title="自动生成函数注释"></a>自动生成函数注释</h2><p>1、进入设置<br><code>设置</code>=&gt;<code>编辑器</code>=&gt;<code>实时模版</code>=&gt;<code>右侧加号</code>=&gt;<code>实时模版</code>=&gt;<code>在下方更改信息</code><br>2、添加模版信息<br>在缩写出填写</p>
@@ -62,11 +104,11 @@
 <p>在模版文本处填写</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/*!</span><br><span class="line"> * 函数名：</span><br><span class="line"> * 功能: </span><br><span class="line"> * 参数： </span><br><span class="line"> * 返回值： </span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
 <p>3、在更改处选择C++，选择下图的选项</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/C++学习笔记/模版更改.6fyy1pfwniw0.jpg" alt="模版更改"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/C++学习笔记/模版更改.6fyy1pfwniw0.jpg" alt="模版更改"></p>
 <p>4、点击应用，完成注释模版添加<br>5、回到C++编辑界面，在英语输入法下，输入 <script type="math/tex">`则会弹出 `$comments</script>，按下回车则会自动填入。</p>
 <h2 id="转到变量声明处"><a href="#转到变量声明处" class="headerlink" title="转到变量声明处"></a>转到变量声明处</h2><p>当我们定义了一个变量后，在后期使用时，想要查看变量定义的位置与信息时，按下键盘的command键，使用鼠标左键点击变量即可回到变量声明位置。</p>
 <h1 id="GitHub仓库的使用方法"><a href="#GitHub仓库的使用方法" class="headerlink" title="GitHub仓库的使用方法"></a>GitHub仓库的使用方法</h1><p>1、本篇文章使用的代码已经同步上传GitHub仓库，<a href="https://github.com/KB-talk/CPP" title="CPP">代码仓库链接</a>，进入GitHub中clone到本地，使用3种方法下载代码都可以。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/C++学习笔记/clone.342h01r8o8c.jpg" alt="clone"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/C++学习笔记/clone.342h01r8o8c.jpg" alt="clone"></p>
 <p>2、下载到本地后，本代码仓库中包含了多个以Part为名称的文件夹，每一个Part文件夹对应一个工程，在使用Clion进行编译时，进入对应的工程文件后进行编译。不要在CPP文件夹中编译，因为C++是与python不同的，与C语言的工程是相似的，C++的编译是以main.cpp为主文件来进行整个工程的编译的，而python的编译可以只编译当前文件。</p>
 <h1 id="C-基础语法篇"><a href="#C-基础语法篇" class="headerlink" title="C++基础语法篇"></a>C++基础语法篇</h1><p>C++基础的头文件为 <code>#include &lt;iostream&gt;</code>,目前使用此头文件，后续使用其他头文件时将会说明。</p>
 <h2 id="Part-I：变量与常量的定义与使用"><a href="#Part-I：变量与常量的定义与使用" class="headerlink" title="Part- I：变量与常量的定义与使用"></a>Part- I：变量与常量的定义与使用</h2><h3 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h3><p>我们在定义一个变量时，首先需要确定变量的数据类型。c++中的数据类型有<br><code>整型</code>：short int、signed short int、unsigned short int、int、signed int、unsigned int、long int、signed long int、unsigned long int</p>
@@ -102,26 +144,406 @@
       </tags>
   </entry>
   <entry>
-    <title>gergebra的嵌入方法</title>
-    <url>/2023/07/15/gergebra%E7%9A%84%E5%B5%8C%E5%85%A5%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="进入geogebra进行图形的制作"><a href="#进入geogebra进行图形的制作" class="headerlink" title="进入geogebra进行图形的制作"></a>进入geogebra进行图形的制作</h1><p>geogebra是优秀的数学绘图工具，可以描述数学图像并演示，支持互动，功能强大。<a href="https://www.geogebra.org/download" title="geogebra首页">点击进入geogebra官网</a></p>
-<p>进入首页，选择需要的数学计算器工具，进入计算器。</p>
-<h1 id="进行图形的绘制"><a href="#进行图形的绘制" class="headerlink" title="进行图形的绘制"></a>进行图形的绘制</h1><p>在编辑器中绘制需要的图形</p>
-<h1 id="点击在线保存"><a href="#点击在线保存" class="headerlink" title="点击在线保存"></a>点击在线保存</h1><h1 id="获取链接"><a href="#获取链接" class="headerlink" title="获取链接"></a>获取链接</h1><h2 id="在弹窗中点击分享，或者在打开中选择对应的图形"><a href="#在弹窗中点击分享，或者在打开中选择对应的图形" class="headerlink" title="在弹窗中点击分享，或者在打开中选择对应的图形"></a>在弹窗中点击分享，或者在打开中选择对应的图形</h2><p>点击查看</p>
-<h2 id="在右上角，选择详细信息"><a href="#在右上角，选择详细信息" class="headerlink" title="在右上角，选择详细信息"></a>在右上角，选择详细信息</h2><h2 id="选择分享，选择嵌入选项，点击显示更多"><a href="#选择分享，选择嵌入选项，点击显示更多" class="headerlink" title="选择分享，选择嵌入选项，点击显示更多"></a>选择分享，选择嵌入选项，点击显示更多</h2><h2 id="设置嵌入的图像的功能"><a href="#设置嵌入的图像的功能" class="headerlink" title="设置嵌入的图像的功能"></a>设置嵌入的图像的功能</h2><h3 id="更改程序大小"><a href="#更改程序大小" class="headerlink" title="更改程序大小"></a>更改程序大小</h3><p>宽度选择800即可，高度会自动设置</p>
-<h2 id="设置显示配置"><a href="#设置显示配置" class="headerlink" title="设置显示配置"></a>设置显示配置</h2><p>选中重置作图图标<br>选中单击加载（可选）</p>
-<h3 id="设置小程序设置"><a href="#设置小程序设置" class="headerlink" title="设置小程序设置"></a>设置小程序设置</h3><p>选中支持上档键移动和缩放</p>
-<h3 id="复制链接"><a href="#复制链接" class="headerlink" title="复制链接"></a>复制链接</h3><p>点击复制按钮，复制生成的链接</p>
-<h1 id="在博客中嵌入"><a href="#在博客中嵌入" class="headerlink" title="在博客中嵌入"></a>在博客中嵌入</h1><p>在博客中输入复制的链接即可</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;iframe scrolling=<span class="string">&quot;no&quot;</span> title=<span class="string">&quot;未命名&quot;</span> src=<span class="string">&quot;https://www.geogebra.org/material/iframe/id/e47uzmwh/width/800/height/461/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/true&quot;</span> width=<span class="string">&quot;800px&quot;</span> height=<span class="string">&quot;461px&quot;</span> style=<span class="string">&quot;border:0px;&quot;</span>&gt; &lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
-<p>插入的效果如下：</p>
-<iframe scrolling="no" title="未命名" src="https://www.geogebra.org/material/iframe/id/e47uzmwh/width/800/height/461/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/true" width="800px" height="461px" style="border:0px;">` `</iframe>
+    <title>如何解决adobe破解版盗版检测问题</title>
+    <url>/2023/09/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3adobe%E7%A0%B4%E8%A7%A3%E7%89%88%E7%9B%97%E7%89%88%E6%A3%80%E6%B5%8B%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<blockquote>
+<p>本文是在MAC中遇到的情况</p>
+</blockquote>
+<p>近期，在使用PS的时候，突然出现弹窗，提示监测到软件是盗版。（当然没有钞能力去支持正版了）</p>
+<p><img src="https://jsd.cdn.zzko.cn/gh/KB-talk/picx-images-hosting@master/Radio-Silence/弹窗.6dloc2a61aww.png" alt="弹窗"><br>在网上找了很多方法，经过验证，这个方法是有效的，还是比较方便的。</p>
+<h1 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h1><p>我们需要一个<strong>Radio Silence</strong>软件来帮助我们，这是一个防火墙软件，可以对软件的网络进行隔离，从而使Adobe无法检测我们的软件。</p>
+<p>此款软件在百度中可以搜索到，但是大部分是需要下载积分的。在这里我放置一个123云盘的链接<a href="https://www.123pan.com/s/i50Tjv-WPkWA.html">Radio Silence</a>。</p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>1、根据提示安装软件。</p>
+<p>2、将photoshop.app拖放到Radio Silence中去。</p>
+<p>打开访达，进入应用程序，找到PS的目录，将Adobe Photoshop 2022拖入Radio Silence。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/Radio-Silence/ps.37r0ha7crc8w.png" alt="ps"></p>
+<p>3、将拖放到Radio Silence中去</p>
+<p>进入Uninstall Adobe Photoshop 2022的原始项目，找到PHSP_23_3_1_32，将PHSP_23_3_1_32拖入到Radio Silence。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/Radio-Silence/PHSP.65vt6h94vo1s.png" alt="PHSP"></p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>经过上述的操作，Radio Silence就可以帮我们避免软件的正版检查了。可以正常的使用PS了。</p>
+<p>目前，只有PS出现这种情况，若后续其他软件出现相同问题，可以进行相同的尝试。</p>
+<h1 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h1><div class="tip info"><p>使用前请确保VPN以关闭</p>
+</div>
+<ol>
+<li>关闭VPN</li>
+<li>正确配置Radio Silence</li>
+<li>打开Radio Silence</li>
+<li>打开PS</li>
+<li>打开VPN</li>
+</ol>
+<h1 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h1><p>经过上面的操作，有时会出现<mark class="hl-label default">PS闪退</mark> 的情况，或者提示是否保存。一般出现这种情况是没有正确使用Radio Silence造成的。如果出现此状况，请重启电脑，重新执行使用流程。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>adobe</tag>
+        <tag>ps</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用draw.io绘制流程图</title>
+    <url>/2023/09/04/%E4%BD%BF%E7%94%A8draw-io%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>介绍一个可以不用下载的绘制流程图、原理示意图的工具。在写论文或者笔记时，经常需要绘制一些流程图或者示意图，能够更加清楚的说明想要表达的内容。有很多工具可以绘制流程图，如<strong>WPS</strong>自带了这个功能，在windows系统中常用的就是<strong>visio</strong>，但是这个软件还需要进行破解，而且只能在windows中使用。<mark class="hl-label default">draw</mark> 这个软件（工具）不依赖系统环境，也不依赖于软件，只要有网络就可以使用，而且使用很方便，拥有很多常用的标准图形，基本上足够使用了。让我没想到的是，在draw中还可以绘制电路图，自带了一些常见的电器元件。</p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1>
+    <div class="introduction-card" style="">
+      <div class="introduction-card-top" style="">
+        <div class="int-card-info">
+          <div class="int-tip">绘图工具</div>
+          <div class="int-cardTitle">draw.io</div>
+        </div>
+        <img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/draw/bg.5ix0artc5b40.webp" class="no-lightbox" alt="introduction"/>
+      </div>
+      
+      <div class="introduction-card-bottom">
+        <div class="left">
+          <img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/draw/log.7ctskvioww3k.webp" class="no-lightbox" alt="introduction"/>
+          <div class="info">
+            <div class="title">draw.io</div>
+            <div class="subTitle">流程图、示意图绘图工具</div>
+          </div>
+        </div>
+        <div class="right">
+          <a href="https://www.drawio.com" tableindex="-1" class="no-text-decoration">前往</a>
+        </div>
+      </div>
+    
+    </div>
+  
+<h1 id="关联word"><a href="#关联word" class="headerlink" title="关联word"></a>关联word</h1><p>我在日常编辑文本通常使用<mark class="hl-label default">Markdown</mark> 、<mark class="hl-label default">Latex</mark> 和<mark class="hl-label default">Word</mark> 。</p>
+<p><strong>Markdown</strong>和<strong>Latex</strong>都是直接插入图片，没有做关联的必要。但是使用<strong>Word</strong>的时候，我们还是希望，可以很方便的插入图表的。</p>
+<blockquote>
+<p>在使用过的文本编辑方式，对于无格式需求个人最喜欢的是Markdown，是真的好用还简单。对于排版严格的文件Latex是一个不错的选择，唯一的缺点就是图片的插入和编辑比较麻烦，相对来说使用word更简单点，但是需要用到数学公式的时候，Latex是真的香。最后就是word了，使用WPS和微软的word过后，就不再想用wps了，主要是广告太多了，还有他的会员机制。word相对来说更加的清爽。</p>
+</blockquote>
+<p>1、<mark class="hl-label default">draw</mark> 可以通过添加<mark class="hl-label default">加载项</mark> 的方法来关联Word，<a href="https://appsource.microsoft.com/zh-CN/product/office/wa200000113">点击获取加载项</a>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/draw/获取.4pn5bwlkca9s.webp" alt="获取"></p>
+<p>2、在获取插件的时候需要填写<mark class="hl-label default">Microsoft账号</mark> ，现在使用用word应该都有这个账号吧，如果没有的话，那就注册一个吧。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/draw/登陆.2yx2mp0dh328.webp" alt="登陆"></p>
+<p>3、根据提示进行验证操作。验证完成后，进入365的界面。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/draw/关联.4jyfw2g68fls.webp" alt="关联"></p>
+<p>4、选择需要配置的软件，点击后会进入软件，在软件的右侧需要<mark class="hl-label default">信任此加载项</mark> 。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/draw/信任.3aktpcnfhpkw.webp" alt="信任"></p>
+<p>5、成功添加后，在word中的插入中就会出现<mark class="hl-label default">draw</mark> 的功能</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/draw/完成.2fpk68eqc88w.webp" alt="完成"></p>
+<p>6、我们就可以在word中使用draw了。</p>
+]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
+        <tag>流程图绘制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用picx搭建免费图床</title>
+    <url>/2023/07/18/%E4%BD%BF%E7%94%A8picx%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="图床的作用"><a href="#图床的作用" class="headerlink" title="图床的作用"></a>图床的作用</h1><p>在使用markdown写文章以及博客的时候，经常会需要插入图片，刚开始会使用嵌入本地图片的方法，但经常因为路径的不正确导致文章内的图片不能显示，而且使用本地图片的时候需要建立文件夹来存放图片，这样项目文件就会多出很多文件夹使项目变得杂乱。使用图传就可以解决上述的所有问题，使用图床中的图片会加速图片的加载，而且解决了图片无法正常显示的问题，可以使用简单语句实现图片的插入。</p>
+<h1 id="图床的选择"><a href="#图床的选择" class="headerlink" title="图床的选择"></a>图床的选择</h1><p>目前图床有很多种，有免费的也有收费的，不同的图床的容量也不一样，<a href="https://blog.anheyu.com/posts/2785.html">这篇文章对图床有很详细的介绍</a>。</p>
+<p>综合来看，使用自建图床应该是最好的方案。由于没有服务器以及没有PHP的基础，将采用GitHub与picx的方案构建自己的图床。虽然一个仓库只有1G的容量，而且存在被封的风险（不可控），综合实际情况，此方案仍然是较好的方案。</p>
+<h1 id="在GitHub中生成-access-tokens"><a href="#在GitHub中生成-access-tokens" class="headerlink" title="在GitHub中生成 access tokens"></a>在GitHub中生成 access tokens</h1><p>1.进入GitHub，登陆自己的账号。点击自己的头像，选择settings。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.19.18.4evaqmg427q0.jpg" alt="iShot_2023-07-17_22"></p>
+<p>2.进入界面，下拉找到Developer settings<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.20.49.4ozb7dckep2.jpg" alt="iShot_2023-07-17_22"></p>
+<p>3.点击进入，选择Tokens，生成一个新的Tokens<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.22.47.38gm3nrwffc0.jpg" alt="iShot_2023-07-17_22"></p>
+<p>4.输入名称，并在repo处进行选择<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.24.36.is9mkmpl3s8.jpg" alt="iShot_2023-07-17_22"></p>
+<p>5.在最下方，点击生成一个tokens，在此时会生成一串序列</p>
+<blockquote>
+<p>此序列只会显示一次，一定要保存好，点击复制，存储到一个不会丢失的地方。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.25.58.1uz7bb64egkg.jpg" alt="iShot_2023-07-17_22"></p>
+</blockquote>
+<p>6.到此最重要的Tokens已经获得。</p>
+<h1 id="使用Picx搭建图床"><a href="#使用Picx搭建图床" class="headerlink" title="使用Picx搭建图床"></a>使用Picx搭建图床</h1><p>1.<a href="https://picx.xpoet.cn/#/upload">点击进入Picx的网页</a>。</p>
+<p>2.输入刚刚获得的Tokens。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.31.48.4b62r696b4w0.jpg" alt="iShot_2023-07-17_22"></p>
+<p>3.点击一键自动配置，就会在你的GitHub中生成一个对应的仓库，生成完成后会看见用户名，新建的仓库的名称以及分支等信息。我们可以在目录模式处选择目录。</p>
+<blockquote>
+<p>此目录为存放图片文件的文件夹的名称。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.32.30.4onb21pyexk0.jpg" alt="iShot_2023-07-17_22"></p>
+</blockquote>
+<p>4.回到上传图片，可以看到即将上传的位置。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.33.22.7aoefvejnoo0.jpg" alt="iShot_2023-07-17_22"></p>
+<p>5.将图片文件拖入或者选择上传，点击上传，即可完成图片的上传任务。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.37.34.w6n4rxp9ppc.jpg" alt="iShot_2023-07-17_22"></p>
+<p>6.进入图床管理，可以查看图床中的图片以及对图片进行管理，如重命名以及删除等。</p>
+<blockquote>
+<p>图片的重命名，会生成一个以新名称的图片，原图片不会删除<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.39.05.529gle0kwi40.jpg" alt="iShot_2023-07-17_22"></p>
+</blockquote>
+<p>7.成功上传后，在我们的GitHub中可以产看到，多了一个仓库，上传的图片也存在于对应的文件夹中。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.38.51.31264re0x9q0.jpg" alt="iShot_2023-07-17_22"></p>
+<p>8.当仓库中存在文件夹后，目录模式会新增一个选项，可以选择存在的文件夹。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.39.51.57yuuhpznvs0.jpg" alt="iShot_2023-07-17_22"></p>
+<h1 id="Picx的使用"><a href="#Picx的使用" class="headerlink" title="Picx的使用"></a>Picx的使用</h1><p>在我的设置中，有图片压缩，图片名称，添加水印等功能，根据需求自行设置。</p>
+<p>当我们需要插入图片时，进入图床管理，点击复制图片链接即可，在markdown中粘贴即可完成图片的插入。</p>
+<blockquote>
+<p>在设置中，图片链接格式已选择markdown</p>
+</blockquote>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>使用此方法可以解决图片的插入问题，同一张图片被多次不同位置使用时，尤其有效，完美的解决了图片路径的困扰。</p>
+<p>面对GitHub只有1G的存储空间的问题，上传的图片通常只有几十k大小，一个仓库可以存放大量的图片了。当有新的工程时，可以使用上述的方法新建对应的仓库，这样就无需担心存储空间的问题了。</p>
+<p>如果担心仓库被封的话，还是搭建自己的图床，或者购买大公司的图床比较好。</p>
 ]]></content>
       <categories>
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>gergebra</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简单聊一下深度学习</title>
+    <url>/2023/09/05/%E5%AF%B9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>现在，处理器的处理速度已经很快了，特别用于机器学习的GPU，其算力已经以<strong>T</strong>为单位。在此社会背景下，需要大量计算的人工智能的到了迅速的发展，<mark class="hl-label default">AI</mark> 这个词已经随处可见了，很多产品也开始打着<strong>AI</strong>的标签提高竞争力。</p>
+<p>与人工智能一样常常被提起的，深度学习、神经网络、机器学习都是什么。对于计算机专业相关的，需要对他们有一定的理解，对日后的学习也会有一个清晰的思路，我们应该针对那个方向进行学习。</p>
+<h1 id="人工智能"><a href="#人工智能" class="headerlink" title="人工智能"></a>人工智能</h1><p>人工智能已经发展到了很庞大的体系，包含了众多子领域</p>
+<ul>
+<li>计算机视觉</li>
+<li>自然语言处理</li>
+<li>语音处理</li>
+<li>机器翻译</li>
+<li>数据库等</li>
+</ul>
+<p>上面所提到的任意领域称为<mark class="hl-label default">机器学习</mark> 。机器学习研究的内容是如何让计算机可以像人一样通过外部输入信息来提升自己。<mark class="hl-label default">深度学习</mark> 是机器学习其中的一种方法。</p>
+<p>人工智能、机器学习、深度学习是相互包含的关系。他们之间的关系是下面的关系。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/对深度学习的理解/关系.23rnztb5wzgg.webp" alt="关系"></p>
+<h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><p>人们在开始对人工智能的研究是从神经网络开始的，早期的神经网络较为简单，随着时间以及芯片技术的发展，神经网络逐渐复杂，深度学习逐渐成为如今机器学习主流方法。</p>
+<p>深度神经网络是深度学习的基础框架，学习深度学习的核心是在学习各种神经网络，如卷积神经网络、循环神经网络、对抗神经网络等。</p>
+<p>上面说的各种神经网络主要分为两类，</p>
+<ul>
+<li>有监督学习中的神经网络</li>
+<li>无监督学习中的神经网络</li>
+</ul>
+]]></content>
+      <categories>
+        <category>人工智能</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文献管理一个zetero足够了</title>
+    <url>/2023/04/17/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E4%B8%80%E4%B8%AAzetero%E8%B6%B3%E5%A4%9F%E4%BA%86/</url>
+    <content><![CDATA[<p><code>zetero</code>是一款开源的文献管理软件，个人账户拥有300M的免费空间，当空间不够时，可以关联自己的私人网盘。</p>
+<p>zetero的功能非常的强大。目前，在zetero中可以上传pdf文件，可对文献进行各种分类，自动识别文献的作者、期刊、时间等信息，对英文文献进行翻译，阅读PDF，笔记等功能。</p>
+<p>zetero拥有丰富的插件，可以通过各种插件实现各种想要的功能。下面将介绍如何在macOS环境下使用zetero进行文献的管理（windows大同小异），并通过安装插件的方式完善zetero的功能。</p>
+<h1 id="zetero安装"><a href="#zetero安装" class="headerlink" title="zetero安装"></a>zetero安装</h1><ol>
+<li><p>从zetero官网中下载安装包</p>
+<p><a href="https://www.zotero.org">zetero官网</a></p>
+</li>
+<li>根据提示进行安装</li>
+<li>在官网注册自己的账号</li>
+</ol>
+<h1 id="zetero插件"><a href="#zetero插件" class="headerlink" title="zetero插件"></a>zetero插件</h1><p>zetero拥有很多插件，都在Github上进行了开源，访问GitHub进行下载，本文将附上每个插件对应的GitHub仓库。（访问速度慢，请进行科学上网，或使用GitHub加速软件）</p>
+<p>避免链接失效的风险，我将使用到的插件保存到GitHub中作为一个备份，在此GitHub仓库中的插件版本不一定是最新版本获取最新版本的插件，请到各插件详情提供的链接中下载。</p>
+<p><a href="https://github.com/KB-talk/zetero_plugs">备份插件仓库</a></p>
+<h2 id="插件安装方法"><a href="#插件安装方法" class="headerlink" title="插件安装方法"></a>插件安装方法</h2><ol>
+<li>下载将要安装的 <code>插件</code>，插件的格式为 <code>xpi</code>格式。</li>
+<li>点击菜单栏中的工具，选择附加组件，点击齿轮，选择从文件添加，选择要添加的插件。<code>工具——&gt;附加组件——&gt;齿轮——&gt;install Add-on From File——&gt;&#39;插件文件.xpi&#39;</code></li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/选择添加附件.7jjbqk09cs80.png" alt="选择添加附件"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/安装插件.6ry7unntdu80.png" alt="安装插件"></p>
+<ol>
+<li>重启软件</li>
+</ol>
+<h2 id="翻译-zotero-pdf-translate-xpi"><a href="#翻译-zotero-pdf-translate-xpi" class="headerlink" title="翻译-zotero-pdf-translate.xpi"></a>翻译-zotero-pdf-translate.xpi</h2><p>zetero提供了在阅读英文文献时 <code>翻译</code>的插件，支持 <code>选择翻译</code>，使用鼠标选取翻译内容即可完成翻译。若滑词翻译无效，在zetero的首选项中切换翻译接口。</p>
+<p>使用效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/使用效果.1dfnkxysua5c.png" alt="使用效果"></p>
+<p><a href="https://github.com/windingwind/zotero-pdf-translate/releases">zetero翻译插件链接</a></p>
+<h2 id="笔记-zotero-better-notes-xpi"><a href="#笔记-zotero-better-notes-xpi" class="headerlink" title="笔记-zotero-better-notes.xpi"></a>笔记-zotero-better-notes.xpi</h2><p>zetero本身是具有笔记功能的，此插件丰富了zetero本身的笔记功能，可以整理文献中所记录的笔记，可以将笔记以脑图、树图、列表形式展示。</p>
+<p>此插件的功能非常强大，还可以与word等软件关联，具体的使用还需进一步的探讨。</p>
+<h2 id="中文论文信息提取-jasminum-v0-1-8-xpi"><a href="#中文论文信息提取-jasminum-v0-1-8-xpi" class="headerlink" title="中文论文信息提取-jasminum-v0.1.8.xpi"></a>中文论文信息提取-jasminum-v0.1.8.xpi</h2><p>zetero本身只能识别出英文文献的信息，通过这个插件，可以自动提取知网数据。</p>
+<p>使用效果</p>
+<p>正常上传中文文献是没有任何信息的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/无信息.cf1k0ak374w.png" alt="无信息"></p>
+<p>使用知网助手后</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/使用知网助手生成信息.3qxcednalho0.png" alt="使用知网助手生成信息"></p>
+<p>生成对应的信息</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/生成论文信息.5qpc2jbcsf00.png" alt="生成论文信息"></p>
+<p>安装方法</p>
+<ol>
+<li><a href="https://github.com/l0o0/jasminum/releases">下载插件</a></li>
+<li>安装插件，重启软件</li>
+<li>打开zetero首选项，按照图片配置，并设置好PDFtk</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/配置1.2fxqdr7b5c00.png" alt="配置1"></p>
+<ol>
+<li>进入非官方维护中文翻译器，点击刷新，再点击更新全部</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/配置2.6c0yl0w58lc0.png" alt="配置2"></p>
+<ol>
+<li>导入中文论文，使用知网助手提取论文信息</li>
+</ol>
+<h2 id="参考文献-zotero-better-bibtex-6-7-75-xpi"><a href="#参考文献-zotero-better-bibtex-6-7-75-xpi" class="headerlink" title="参考文献-zotero-better-bibtex-6.7.75.xpi"></a>参考文献-zotero-better-bibtex-6.7.75.xpi</h2><p><a href="https://github.com/retorquere/zotero-better-bibtex/releases/tag/v6.7.75">下载链接</a></p>
+<p>此插件可以生成一个参考文献数据库，可以使用latex以及word进行引用。使用此款插件引用参考文献可以自定义参考文献的格式，且生成的参考文献的序号随着引用的顺序自动更新，当添加新的参考文献或者删除时，可以自动的更新编号，大大的降低了参考文献的引用难度。</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><blockquote>
+<p>参考本文的使用方法，需成功安装上述插件。</p>
+</blockquote>
+<h2 id="新建群组、分类"><a href="#新建群组、分类" class="headerlink" title="新建群组、分类"></a>新建群组、分类</h2><p>打开 <code>zetero</code>,在软件左上角可以选择新建群组和分类。通常个人使用使用的是 <code>新建分类</code>，新建分类类似于新建文件夹的功能。<code>新建群组</code>是用于团队使用的，在群组中的内容是可以共享的。</p>
+<h2 id="添加中文文献"><a href="#添加中文文献" class="headerlink" title="添加中文文献"></a>添加中文文献</h2><ol>
+<li>下载论文</li>
+<li>将下载的论文拖入zetero中</li>
+<li>zetero将自动识别提取相关信息，若没有自动提取，右键选择 <code>知网助手</code>即可</li>
+</ol>
+<p>添加后的效果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/中文文献成功添加.7haag279now0.png" alt="中文文献成功添加"></p>
+<p><code>可能遇到的问题</code>：</p>
+<p>导入中文参考文献无法提取数据信息</p>
+<p><code>解决办法</code>：</p>
+<ol>
+<li><code>更换下载论文的途径</code>。通过亲身实践，在知网官网下载的论文大概率是可以识别成功的，但是使用其他途径下载的中文论文可能出现失败的情况。</li>
+<li><code>手动添加信息</code>。具体方法如下，在知网中，选择引用此文献，选择引用Endnote格式，复制到剪切板中，在zetero菜单中选择文件，选择 <code>从剪切板导入</code>选项，zetero将完成信息的导入。</li>
+</ol>
+<blockquote>
+<p>友情提醒：虽然使用自动识别固然方便，但是也存在出错的情况，完成论文后，亲自检查一下更为稳妥。</p>
+</blockquote>
+<h2 id="添加英文文献"><a href="#添加英文文献" class="headerlink" title="添加英文文献"></a>添加英文文献</h2><p>使用zetero添加英文文献相对中文文献将更简单一些。将英文文献拖入对应的分类中即可。</p>
+<h2 id="生成参考文献列表"><a href="#生成参考文献列表" class="headerlink" title="生成参考文献列表"></a>生成参考文献列表</h2><h2 id="编辑参考文献格式"><a href="#编辑参考文献格式" class="headerlink" title="编辑参考文献格式"></a>编辑参考文献格式</h2><h2 id="在Latex中调用参考文献列表"><a href="#在Latex中调用参考文献列表" class="headerlink" title="在Latex中调用参考文献列表"></a>在Latex中调用参考文献列表</h2><p>有关zetero的使用方法，将陆续的进行更新。</p>
+<h1 id="使用坚果云配置云同步扩大网盘容量"><a href="#使用坚果云配置云同步扩大网盘容量" class="headerlink" title="使用坚果云配置云同步扩大网盘容量"></a>使用坚果云配置云同步扩大网盘容量</h1><h2 id="下载并注册坚果云"><a href="#下载并注册坚果云" class="headerlink" title="下载并注册坚果云"></a>下载并注册坚果云</h2><p>1.<a href="https://www.jianguoyun.com/s/downloads">坚果云下载链接</a>，按照提示下载对应版本，并注册账号。</p>
+<p>2.安装完成后，<code>登录账号</code>，<code>选择网页端</code>，在APP中有个 <code>地球</code>的标志。</p>
+<p>3.进入网页端后，选择 <code>账户信息</code>选项。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/账户信息.6odx3oaq0j40.png" alt="账户信息"></p>
+<p>4.再选择 <code>安全选项</code>，并拉到最后。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/安全选项.7jjx07mk78k0.png" alt="安全选项"></p>
+<p>5.点击添加应用，名称输入 <code>zetero</code>，根据提示点击 <code>生成应用密码</code>。坚果云配置完成。</p>
+<h2 id="配置zetero"><a href="#配置zetero" class="headerlink" title="配置zetero"></a>配置zetero</h2><p>1.进入 <code>zetero首选项</code>，进入 <code>同步</code>界面，更改 <code>文献同步</code>选项。</p>
+<blockquote>
+<p>坚果云免费版用户容量也是限额的，但是每个月上传为1G，下载为3.6G,对于我们普通备份文献来说够用了。</p>
+</blockquote>
+<p>2.将同步方式改为 <code>WebDAV</code>。</p>
+<p>3.网址后面输入 <code>dav.jianguoyun.com/dav</code></p>
+<p>4.用户名称与密码在坚果云的网页端可以查看到。将对应的信息输入，然后点击 <code>验证服务器</code>，会提示生成一个文件夹，点击 <code>生成</code>即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/示例.2lqrsek8si60.png" alt="示例"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/验证服务器.3v9sxmveydk0.png" alt="验证服务器"></p>
+<p>5.将 <code>所有使用zetero的设备</code>都是用 <code>WebDAV</code>进行配置一遍，这样所有的设备都是用的是 <code>坚果云盘</code>。</p>
+<h2 id="文献同步"><a href="#文献同步" class="headerlink" title="文献同步"></a>文献同步</h2><p>回到 <code>zetero</code>中，点击右上角的 <code>同步</code>图标进行同步。</p>
+]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>zetero</tag>
+        <tag>论文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>海凌科指纹模块</title>
+    <url>/2023/04/19/%E6%B5%B7%E5%87%8C%E7%A7%91%E6%8C%87%E7%BA%B9%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[<h2 id="海凌科指纹模块"><a href="#海凌科指纹模块" class="headerlink" title="海凌科指纹模块"></a>海凌科指纹模块</h2><p>一款模块最重要的资料是官方指导资料，<a href="https://h.hlktech.com/Mobile/download/fdetail/177.html">指纹模块官方资料下载</a>。本文是根据官方指导资料提炼出更方便开发的使用指南。</p>
+<p>此款指纹模块与传统的指纹模块最大的区别是通信方式的区别，海凌科很多模块都是通过串口通信进行数据交互。</p>
+<p>有关串口通信的相关知识，请看此篇博客。</p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="清空指纹库"><a href="#清空指纹库" class="headerlink" title="清空指纹库"></a>清空指纹库</h3><p><code>发送指令</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0A <span class="number">83</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">01</span> <span class="number">00</span> <span class="number">01</span> <span class="variable constant_">C7</span></span><br></pre></td></tr></table></figure>
+<p><code>应答结果</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="variable constant_">C9</span> </span><br></pre></td></tr></table></figure>
+<h3 id="指纹录入"><a href="#指纹录入" class="headerlink" title="指纹录入"></a>指纹录入</h3><p><code>说明</code>：此功能使用的是自动的指纹录入，只需设置录入次数即可，指纹ID是自动分配的。按下一次抬起，再次按下。</p>
+<p><code>发送指令</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">18</span> <span class="number">01</span> <span class="number">03</span> <span class="variable constant_">FF</span> <span class="variable constant_">FF</span> <span class="variable constant_">E5</span></span><br></pre></td></tr></table></figure>
+<h3 id="指纹识别"><a href="#指纹识别" class="headerlink" title="指纹识别"></a>指纹识别</h3><p><code>发送指令</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> <span class="number">07</span> <span class="number">86</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">23</span> <span class="variable constant_">DC</span></span><br></pre></td></tr></table></figure>
+<p><code>应答结果</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="variable constant_">C9</span> </span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>嵌入式</category>
+      </categories>
+      <tags>
+        <tag>指纹模块</tag>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>esp32开发platformio环境配置</title>
+    <url>/2023/07/16/esp32%E5%BC%80%E5%8F%91platformio%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p>本文同时支持MAC系统和Windows系统</p>
+</blockquote>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>使用Vscode编辑器进行编辑，Vscode是免费的编辑器，在官网下载即可。<a href="https://code.visualstudio.com/Download">点击下载Vscode</a></p>
+<p>进入编辑器，下载插件，在插件管理器中搜索<strong>platformio</strong>，点击安装。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/esp32开发platformio环境配置/platformio插件.2rwex1syrj60.jpg" alt="platformio插件"></p>
+<p>等待安装，安装时间较长。</p>
+<p>安装完成后在左侧会出现platformIO的图标。</p>
+<h1 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h1><p>点击platformIO的图标，选择open，进入platformIO的开始界面。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/esp32开发platformio环境配置/开始界面.1y1du682ttcw.jpg" alt="开始界面"></p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>platformIO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序搭建</title>
+    <url>/2023/08/05/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<blockquote>
+<p>虽然微信小程序在电商、宣传等领域被广泛使用。但是，他拥有链接蓝牙、局域网等功能，于是我想利用小程序开发一个用于调试以及控制其他设备的工具。</p>
+<p>hexo拥有很多主题，小程序也同样拥有很多主题，此小程序将使用vant主题进行开发，此主题拥有丰富的组件。在<a href="https://vant-contrib.gitee.io/vant-weapp/#/home">vant官方文档</a>中拥有详细介绍以及教程，本篇文章是基于此教程进行的开发记录，根据本文可以降低对官网文档的阅读难度，以及大大的提高实现的成功率。</p>
+</blockquote>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><blockquote>
+<p>开发前，需保证已安装需要的环境以及编辑器。</p>
+</blockquote>
+<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>成功安装node.js后，则可以使用npm</p>
+<p><a href="https://nodejs.org/en">点击进入下载node.js</a></p>
+<h2 id="安装编辑器"><a href="#安装编辑器" class="headerlink" title="安装编辑器"></a>安装编辑器</h2><p><a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">点击进入微信开发者工具下载界面</a>，选择对应的版本进行下载。</p>
+<h1 id="注册小程序账号"><a href="#注册小程序账号" class="headerlink" title="注册小程序账号"></a>注册小程序账号</h1><p><a href="https://mp.weixin.qq.com/">点击进入微信公众平台</a>，进行（登陆/注册）。</p>
+<p>根据提示进行注册，比较简单，个人使用选择个人即可。</p>
+<h1 id="设计第一个小程序"><a href="#设计第一个小程序" class="headerlink" title="设计第一个小程序"></a>设计第一个小程序</h1><h2 id="打开微信开发者工具"><a href="#打开微信开发者工具" class="headerlink" title="打开微信开发者工具"></a>打开微信开发者工具</h2><p>打开编辑器，首先进行扫码登陆。</p>
+<h2 id="获取AppID"><a href="#获取AppID" class="headerlink" title="获取AppID"></a>获取AppID</h2><p>进入<a href="https://mp.weixin.qq.com/wxamp/home/guide?lang=zh_CN&amp;token=1940385651">小程序管理界面</a>，进行ID的获取。后续创建小程序时用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/AppID.1y8ys41qw30g.jpg" alt="AppID"></p>
+<h2 id="创建小程序"><a href="#创建小程序" class="headerlink" title="创建小程序"></a>创建小程序</h2><p>点击加号，创建小程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/新建小程序.lhcpets7cwg.jpg" alt="新建小程序"></p>
+<h2 id="预览显示"><a href="#预览显示" class="headerlink" title="预览显示"></a>预览显示</h2><p>当在编辑器左侧出现下面的预览，则表示小程序创建成功了。</p>
+<blockquote>
+<p>在小程序的创建中成功率很高的，只要获取到AppID就可以顺利创建。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/预览.goqu804i26o.jpg" alt="预览"></p>
+<h2 id="vant安装"><a href="#vant安装" class="headerlink" title="vant安装"></a>vant安装</h2><blockquote>
+<p>在vant中可能会出现npm构建失败的情况。本文与官方教程有所不同，本人使用官方教程未成功。</p>
+</blockquote>
+<p>1.在项目中进入终端</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/新建终端.1zj1pad9ptpc.jpg" alt="新建终端"></p>
+<p>2.输入npm init -y</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm init -y </span><br></pre></td></tr></table></figure>
+<p>如果npm报错，在使用npm前加上sudo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo npm init -y </span><br></pre></td></tr></table></figure>
+<p>3.安装vant</p>
+<p>在终端输入npm i @vant/weapp -S —omit=dev</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo npm i @vant/weapp -S --omit=dev </span><br></pre></td></tr></table></figure>
+<p>4.修改 app.json</p>
+<p>进入app.json中找到”style”: “v2”，将其删除。</p>
+<blockquote>
+<p>在第11行</p>
+</blockquote>
+<p>5.修改 project.config.json</p>
+<p>在project.config.json中，找到packNpmRelationList。</p>
+<blockquote>
+<p>文件中第16行</p>
+</blockquote>
+<p>在[ ]中填入以下内容，</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;packageJsonPath&quot;</span>:<span class="string">&quot;./package.json&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;miniprogramNpmDistDir&quot;</span>:<span class="string">&quot;./&quot;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在此步骤与官方文档不同，区别在于miniprogramNpmDistDir后的路径。按照官方示例的路径，在npm构建中会失败。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/修改-project.config.json.3iukvzmw7ig0.jpg" alt="修改-project"></p>
+<p>6.构建npm</p>
+<p>在工具中选择构建npm</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/构建npm.2kepz27y98k0.jpg" alt="构建npm"></p>
+<p>成功构建出现弹窗</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/成功构建npm.1wgo37go9pk0.jpg" alt="成功构建npm"></p>
+<p>7.更改本地设置</p>
+<p>首先点击右上角的详情，然后更改调试基础库，选择2.33.0，本人在使用3.0.0时渲染出错。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/iShot_2023-08-05_11.50.32.6bs73t8w9e40.jpg" alt="iShot_2023-08-05_11"></p>
+<p>至此vant安装完成。</p>
+<h2 id="引入组件"><a href="#引入组件" class="headerlink" title="引入组件"></a>引入组件</h2><p>在app.json中最后处添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;usingComponents&quot;: &#123;</span><br><span class="line">    &quot;van-button&quot;: &quot;@vant/weapp/button/index&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>注意在上行处添加逗号。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/引入组件.1i0z52707f34.jpg" alt="引入组件"></p>
+<h2 id="使用组件"><a href="#使用组件" class="headerlink" title="使用组件"></a>使用组件</h2><p>在index.wxml中添加按钮</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;van-button type=&quot;default&quot;&gt;默认按钮&lt;/van-button&gt;</span><br><span class="line">&lt;van-button type=&quot;primary&quot;&gt;主要按钮&lt;/van-button&gt;</span><br><span class="line">&lt;van-button type=&quot;info&quot;&gt;信息按钮&lt;/van-button&gt;</span><br><span class="line">&lt;van-button type=&quot;warning&quot;&gt;警告按钮&lt;/van-button&gt;</span><br><span class="line">&lt;van-button type=&quot;danger&quot;&gt;危险按钮&lt;/van-button&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/添加按钮.79d8j0igx3c0.jpg" alt="添加按钮"></p>
+<p>保存后，编译完成，在左侧渲染出即可显示出添加的按钮。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/渲染结果.5ozeg9x0ak40.jpg" alt="渲染结果"></p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><p>当我们重新打开工程时，可能会出现编译错误的情况，此时我们重新构建npm大概率会解决问题。</p>
+]]></content>
+      <categories>
+        <category>微信小程序</category>
+      </categories>
+      <tags>
+        <tag>小程序</tag>
+        <tag>vant</tag>
       </tags>
   </entry>
   <entry>
@@ -172,16 +594,16 @@
     </a></div>
 <h1 id="fusion安装"><a href="#fusion安装" class="headerlink" title="fusion安装"></a>fusion安装</h1><ol>
 <li><p>下载完成软件，运行安装包</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/blender+fusion360/安装.asy6jsg6qpc.webp" alt="安装"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/blender+fusion360/安装.asy6jsg6qpc.webp" alt="安装"></p>
 </li>
 <li><p>安装完成后需要登陆账号</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/blender+fusion360/安装完成登陆.2wifagyg51c0.webp" alt="安装完成登陆"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/blender+fusion360/安装完成登陆.2wifagyg51c0.webp" alt="安装完成登陆"></p>
 </li>
 <li><p>根据提示，进行初始化，安装完成后界面如下</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/blender+fusion360/安装完成.35o2ykmk9jr4.webp" alt="安装完成"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/blender+fusion360/安装完成.35o2ykmk9jr4.webp" alt="安装完成"></p>
 </li>
 </ol>
-<h1 id="Blender安装"><a href="#Blender安装" class="headerlink" title="Blender安装"></a>Blender安装</h1><p>下载安装包后进行安装，安装后第一次打开进行配置。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/blender+fusion360/blender启动界面.5w8bx380paps.webp" alt="blender启动界面"></p>
+<h1 id="Blender安装"><a href="#Blender安装" class="headerlink" title="Blender安装"></a>Blender安装</h1><p>下载安装包后进行安装，安装后第一次打开进行配置。<br><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/blender+fusion360/blender启动界面.5w8bx380paps.webp" alt="blender启动界面"></p>
 ]]></content>
       <categories>
         <category>环境配置</category>
@@ -189,428 +611,6 @@
       <tags>
         <tag>Fusion360</tag>
         <tag>Blender</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>esp32开发platformio环境配置</title>
-    <url>/2023/07/16/esp32%E5%BC%80%E5%8F%91platformio%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<blockquote>
-<p>本文同时支持MAC系统和Windows系统</p>
-</blockquote>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>使用Vscode编辑器进行编辑，Vscode是免费的编辑器，在官网下载即可。<a href="https://code.visualstudio.com/Download">点击下载Vscode</a></p>
-<p>进入编辑器，下载插件，在插件管理器中搜索<strong>platformio</strong>，点击安装。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/esp32开发platformio环境配置/platformio插件.2rwex1syrj60.jpg" alt="platformio插件"></p>
-<p>等待安装，安装时间较长。</p>
-<p>安装完成后在左侧会出现platformIO的图标。</p>
-<h1 id="新建工程"><a href="#新建工程" class="headerlink" title="新建工程"></a>新建工程</h1><p>点击platformIO的图标，选择open，进入platformIO的开始界面。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/esp32开发platformio环境配置/开始界面.1y1du682ttcw.jpg" alt="开始界面"></p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>platformIO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Clash赋予brew新生</title>
-    <url>/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/</url>
-    <content><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>VPN已经用了很长时间了，经常都是用在访问GitHub，今天在使用brew安装第三方库的时候，经常因为速度下载失败，这时候突然想起能不能用VPN来加速brew下载呢.<br>使用Clash打开vpn，在使用brew时并没有起到加速作用。在clash中看见一个选项，<code>复制终端代理命令</code>。</p>
-<h1 id="如何使用clash加速brew下载"><a href="#如何使用clash加速brew下载" class="headerlink" title="如何使用clash加速brew下载"></a>如何使用clash加速brew下载</h1><p>1.进入clash界面，选择复制终端代理命令</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/clash赋予brew新生/clash界面.4u76t0zzdh20.jpg" alt="clash界面"></p>
-<p>2.打开终端，在终端中输入刚刚复制的命令，按下回车即可</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/clash赋予brew新生/应用.3s9laykl2460.jpg" alt="应用"></p>
-<p>3.接下来使用brew下载即可</p>
-<p>此时会发现brew下载会非常的迅速了，不会因为下载速度而失败了。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>Clash</tag>
-        <tag>brew加速</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用picx搭建免费图床</title>
-    <url>/2023/07/18/%E4%BD%BF%E7%94%A8picx%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h1 id="图床的作用"><a href="#图床的作用" class="headerlink" title="图床的作用"></a>图床的作用</h1><p>在使用markdown写文章以及博客的时候，经常会需要插入图片，刚开始会使用嵌入本地图片的方法，但经常因为路径的不正确导致文章内的图片不能显示，而且使用本地图片的时候需要建立文件夹来存放图片，这样项目文件就会多出很多文件夹使项目变得杂乱。使用图传就可以解决上述的所有问题，使用图床中的图片会加速图片的加载，而且解决了图片无法正常显示的问题，可以使用简单语句实现图片的插入。</p>
-<h1 id="图床的选择"><a href="#图床的选择" class="headerlink" title="图床的选择"></a>图床的选择</h1><p>目前图床有很多种，有免费的也有收费的，不同的图床的容量也不一样，<a href="https://blog.anheyu.com/posts/2785.html">这篇文章对图床有很详细的介绍</a>。</p>
-<p>综合来看，使用自建图床应该是最好的方案。由于没有服务器以及没有PHP的基础，将采用GitHub与picx的方案构建自己的图床。虽然一个仓库只有1G的容量，而且存在被封的风险（不可控），综合实际情况，此方案仍然是较好的方案。</p>
-<h1 id="在GitHub中生成-access-tokens"><a href="#在GitHub中生成-access-tokens" class="headerlink" title="在GitHub中生成 access tokens"></a>在GitHub中生成 access tokens</h1><p>1.进入GitHub，登陆自己的账号。点击自己的头像，选择settings。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.19.18.4evaqmg427q0.jpg" alt="iShot_2023-07-17_22"></p>
-<p>2.进入界面，下拉找到Developer settings<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.20.49.4ozb7dckep2.jpg" alt="iShot_2023-07-17_22"></p>
-<p>3.点击进入，选择Tokens，生成一个新的Tokens<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.22.47.38gm3nrwffc0.jpg" alt="iShot_2023-07-17_22"></p>
-<p>4.输入名称，并在repo处进行选择<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.24.36.is9mkmpl3s8.jpg" alt="iShot_2023-07-17_22"></p>
-<p>5.在最下方，点击生成一个tokens，在此时会生成一串序列</p>
-<blockquote>
-<p>此序列只会显示一次，一定要保存好，点击复制，存储到一个不会丢失的地方。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.25.58.1uz7bb64egkg.jpg" alt="iShot_2023-07-17_22"></p>
-</blockquote>
-<p>6.到此最重要的Tokens已经获得。</p>
-<h1 id="使用Picx搭建图床"><a href="#使用Picx搭建图床" class="headerlink" title="使用Picx搭建图床"></a>使用Picx搭建图床</h1><p>1.<a href="https://picx.xpoet.cn/#/upload">点击进入Picx的网页</a>。</p>
-<p>2.输入刚刚获得的Tokens。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.31.48.4b62r696b4w0.jpg" alt="iShot_2023-07-17_22"></p>
-<p>3.点击一键自动配置，就会在你的GitHub中生成一个对应的仓库，生成完成后会看见用户名，新建的仓库的名称以及分支等信息。我们可以在目录模式处选择目录。</p>
-<blockquote>
-<p>此目录为存放图片文件的文件夹的名称。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.32.30.4onb21pyexk0.jpg" alt="iShot_2023-07-17_22"></p>
-</blockquote>
-<p>4.回到上传图片，可以看到即将上传的位置。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.33.22.7aoefvejnoo0.jpg" alt="iShot_2023-07-17_22"></p>
-<p>5.将图片文件拖入或者选择上传，点击上传，即可完成图片的上传任务。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.37.34.w6n4rxp9ppc.jpg" alt="iShot_2023-07-17_22"></p>
-<p>6.进入图床管理，可以查看图床中的图片以及对图片进行管理，如重命名以及删除等。</p>
-<blockquote>
-<p>图片的重命名，会生成一个以新名称的图片，原图片不会删除<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.39.05.529gle0kwi40.jpg" alt="iShot_2023-07-17_22"></p>
-</blockquote>
-<p>7.成功上传后，在我们的GitHub中可以产看到，多了一个仓库，上传的图片也存在于对应的文件夹中。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.38.51.31264re0x9q0.jpg" alt="iShot_2023-07-17_22"></p>
-<p>8.当仓库中存在文件夹后，目录模式会新增一个选项，可以选择存在的文件夹。<br><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/picx图床配置/iShot_2023-07-17_22.39.51.57yuuhpznvs0.jpg" alt="iShot_2023-07-17_22"></p>
-<h1 id="Picx的使用"><a href="#Picx的使用" class="headerlink" title="Picx的使用"></a>Picx的使用</h1><p>在我的设置中，有图片压缩，图片名称，添加水印等功能，根据需求自行设置。</p>
-<p>当我们需要插入图片时，进入图床管理，点击复制图片链接即可，在markdown中粘贴即可完成图片的插入。</p>
-<blockquote>
-<p>在设置中，图片链接格式已选择markdown</p>
-</blockquote>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>使用此方法可以解决图片的插入问题，同一张图片被多次不同位置使用时，尤其有效，完美的解决了图片路径的困扰。</p>
-<p>面对GitHub只有1G的存储空间的问题，上传的图片通常只有几十k大小，一个仓库可以存放大量的图片了。当有新的工程时，可以使用上述的方法新建对应的仓库，这样就无需担心存储空间的问题了。</p>
-<p>如果担心仓库被封的话，还是搭建自己的图床，或者购买大公司的图床比较好。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何解决adobe破解版盗版检测问题</title>
-    <url>/2023/09/04/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3adobe%E7%A0%B4%E8%A7%A3%E7%89%88%E7%9B%97%E7%89%88%E6%A3%80%E6%B5%8B%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<blockquote>
-<p>本文是在MAC中遇到的情况</p>
-</blockquote>
-<p>近期，在使用PS的时候，突然出现弹窗，提示监测到软件是盗版。（当然没有钞能力去支持正版了）</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/Radio-Silence/弹窗.6dloc2a61aww.png" alt="弹窗"><br>在网上找了很多方法，经过验证，这个方法是有效的，还是比较方便的。</p>
-<h1 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h1><p>我们需要一个<strong>Radio Silence</strong>软件来帮助我们，这是一个防火墙软件，可以对软件的网络进行隔离，从而使Adobe无法检测我们的软件。</p>
-<p>此款软件在百度中可以搜索到，但是大部分是需要下载积分的。在这里我放置一个123云盘的链接<a href="https://www.123pan.com/s/i50Tjv-WPkWA.html">Radio Silence</a>。</p>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>1、根据提示安装软件。</p>
-<p>2、将photoshop.app拖放到Radio Silence中去。</p>
-<p>打开访达，进入应用程序，找到PS的目录，将Adobe Photoshop 2022拖入Radio Silence。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/Radio-Silence/ps.37r0ha7crc8w.png" alt="ps"></p>
-<p>3、将拖放到Radio Silence中去</p>
-<p>进入Uninstall Adobe Photoshop 2022的原始项目，找到PHSP_23_3_1_32，将PHSP_23_3_1_32拖入到Radio Silence。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/Radio-Silence/PHSP.65vt6h94vo1s.png" alt="PHSP"></p>
-<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>经过上述的操作，Radio Silence就可以帮我们避免软件的正版检查了。可以正常的使用PS了。</p>
-<p>目前，只有PS出现这种情况，若后续其他软件出现相同问题，可以进行相同的尝试。</p>
-<h1 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h1><div class="tip info"><p>使用前请确保VPN以关闭</p>
-</div>
-<ol>
-<li>关闭VPN</li>
-<li>正确配置Radio Silence</li>
-<li>打开Radio Silence</li>
-<li>打开PS</li>
-<li>打开VPN</li>
-</ol>
-<h1 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h1><p>经过上面的操作，有时会出现<mark class="hl-label default">PS闪退</mark> 的情况，或者提示是否保存。一般出现这种情况是没有正确使用Radio Silence造成的。如果出现此状况，请重启电脑，重新执行使用流程。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>adobe</tag>
-        <tag>ps</tag>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用draw.io绘制流程图</title>
-    <url>/2023/09/04/%E4%BD%BF%E7%94%A8draw-io%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>介绍一个可以不用下载的绘制流程图、原理示意图的工具。在写论文或者笔记时，经常需要绘制一些流程图或者示意图，能够更加清楚的说明想要表达的内容。有很多工具可以绘制流程图，如<strong>WPS</strong>自带了这个功能，在windows系统中常用的就是<strong>visio</strong>，但是这个软件还需要进行破解，而且只能在windows中使用。<mark class="hl-label default">draw</mark> 这个软件（工具）不依赖系统环境，也不依赖于软件，只要有网络就可以使用，而且使用很方便，拥有很多常用的标准图形，基本上足够使用了。让我没想到的是，在draw中还可以绘制电路图，自带了一些常见的电器元件。</p>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1>
-    <div class="introduction-card" style="">
-      <div class="introduction-card-top" style="">
-        <div class="int-card-info">
-          <div class="int-tip">绘图工具</div>
-          <div class="int-cardTitle">draw.io</div>
-        </div>
-        <img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/draw/bg.5ix0artc5b40.webp" class="no-lightbox" alt="introduction"/>
-      </div>
-      
-      <div class="introduction-card-bottom">
-        <div class="left">
-          <img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/draw/log.7ctskvioww3k.webp" class="no-lightbox" alt="introduction"/>
-          <div class="info">
-            <div class="title">draw.io</div>
-            <div class="subTitle">流程图、示意图绘图工具</div>
-          </div>
-        </div>
-        <div class="right">
-          <a href="https://www.drawio.com" tableindex="-1" class="no-text-decoration">前往</a>
-        </div>
-      </div>
-    
-    </div>
-  
-<h1 id="关联word"><a href="#关联word" class="headerlink" title="关联word"></a>关联word</h1><p>我在日常编辑文本通常使用<mark class="hl-label default">Markdown</mark> 、<mark class="hl-label default">Latex</mark> 和<mark class="hl-label default">Word</mark> 。</p>
-<p><strong>Markdown</strong>和<strong>Latex</strong>都是直接插入图片，没有做关联的必要。但是使用<strong>Word</strong>的时候，我们还是希望，可以很方便的插入图表的。</p>
-<blockquote>
-<p>在使用过的文本编辑方式，对于无格式需求个人最喜欢的是Markdown，是真的好用还简单。对于排版严格的文件Latex是一个不错的选择，唯一的缺点就是图片的插入和编辑比较麻烦，相对来说使用word更简单点，但是需要用到数学公式的时候，Latex是真的香。最后就是word了，使用WPS和微软的word过后，就不再想用wps了，主要是广告太多了，还有他的会员机制。word相对来说更加的清爽。</p>
-</blockquote>
-<p>1、<mark class="hl-label default">draw</mark> 可以通过添加<mark class="hl-label default">加载项</mark> 的方法来关联Word，<a href="https://appsource.microsoft.com/zh-CN/product/office/wa200000113">点击获取加载项</a>。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/draw/获取.4pn5bwlkca9s.webp" alt="获取"></p>
-<p>2、在获取插件的时候需要填写<mark class="hl-label default">Microsoft账号</mark> ，现在使用用word应该都有这个账号吧，如果没有的话，那就注册一个吧。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/draw/登陆.2yx2mp0dh328.webp" alt="登陆"></p>
-<p>3、根据提示进行验证操作。验证完成后，进入365的界面。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/draw/关联.4jyfw2g68fls.webp" alt="关联"></p>
-<p>4、选择需要配置的软件，点击后会进入软件，在软件的右侧需要<mark class="hl-label default">信任此加载项</mark> 。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/draw/信任.3aktpcnfhpkw.webp" alt="信任"></p>
-<p>5、成功添加后，在word中的插入中就会出现<mark class="hl-label default">draw</mark> 的功能</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/draw/完成.2fpk68eqc88w.webp" alt="完成"></p>
-<p>6、我们就可以在word中使用draw了。</p>
-]]></content>
-      <categories>
-        <category>论文</category>
-      </categories>
-      <tags>
-        <tag>软件</tag>
-        <tag>流程图绘制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>简单聊一下深度学习</title>
-    <url>/2023/09/05/%E5%AF%B9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>现在，处理器的处理速度已经很快了，特别用于机器学习的GPU，其算力已经以<strong>T</strong>为单位。在此社会背景下，需要大量计算的人工智能的到了迅速的发展，<mark class="hl-label default">AI</mark> 这个词已经随处可见了，很多产品也开始打着<strong>AI</strong>的标签提高竞争力。</p>
-<p>与人工智能一样常常被提起的，深度学习、神经网络、机器学习都是什么。对于计算机专业相关的，需要对他们有一定的理解，对日后的学习也会有一个清晰的思路，我们应该针对那个方向进行学习。</p>
-<h1 id="人工智能"><a href="#人工智能" class="headerlink" title="人工智能"></a>人工智能</h1><p>人工智能已经发展到了很庞大的体系，包含了众多子领域</p>
-<ul>
-<li>计算机视觉</li>
-<li>自然语言处理</li>
-<li>语音处理</li>
-<li>机器翻译</li>
-<li>数据库等</li>
-</ul>
-<p>上面所提到的任意领域称为<mark class="hl-label default">机器学习</mark> 。机器学习研究的内容是如何让计算机可以像人一样通过外部输入信息来提升自己。<mark class="hl-label default">深度学习</mark> 是机器学习其中的一种方法。</p>
-<p>人工智能、机器学习、深度学习是相互包含的关系。他们之间的关系是下面的关系。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/对深度学习的理解/关系.23rnztb5wzgg.webp" alt="关系"></p>
-<h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><p>人们在开始对人工智能的研究是从神经网络开始的，早期的神经网络较为简单，随着时间以及芯片技术的发展，神经网络逐渐复杂，深度学习逐渐成为如今机器学习主流方法。</p>
-<p>深度神经网络是深度学习的基础框架，学习深度学习的核心是在学习各种神经网络，如卷积神经网络、循环神经网络、对抗神经网络等。</p>
-<p>上面说的各种神经网络主要分为两类，</p>
-<ul>
-<li>有监督学习中的神经网络</li>
-<li>无监督学习中的神经网络</li>
-</ul>
-]]></content>
-      <categories>
-        <category>人工智能</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序搭建</title>
-    <url>/2023/08/05/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<blockquote>
-<p>虽然微信小程序在电商、宣传等领域被广泛使用。但是，他拥有链接蓝牙、局域网等功能，于是我想利用小程序开发一个用于调试以及控制其他设备的工具。</p>
-<p>hexo拥有很多主题，小程序也同样拥有很多主题，此小程序将使用vant主题进行开发，此主题拥有丰富的组件。在<a href="https://vant-contrib.gitee.io/vant-weapp/#/home">vant官方文档</a>中拥有详细介绍以及教程，本篇文章是基于此教程进行的开发记录，根据本文可以降低对官网文档的阅读难度，以及大大的提高实现的成功率。</p>
-</blockquote>
-<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><blockquote>
-<p>开发前，需保证已安装需要的环境以及编辑器。</p>
-</blockquote>
-<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>成功安装node.js后，则可以使用npm</p>
-<p><a href="https://nodejs.org/en">点击进入下载node.js</a></p>
-<h2 id="安装编辑器"><a href="#安装编辑器" class="headerlink" title="安装编辑器"></a>安装编辑器</h2><p><a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">点击进入微信开发者工具下载界面</a>，选择对应的版本进行下载。</p>
-<h1 id="注册小程序账号"><a href="#注册小程序账号" class="headerlink" title="注册小程序账号"></a>注册小程序账号</h1><p><a href="https://mp.weixin.qq.com/">点击进入微信公众平台</a>，进行（登陆/注册）。</p>
-<p>根据提示进行注册，比较简单，个人使用选择个人即可。</p>
-<h1 id="设计第一个小程序"><a href="#设计第一个小程序" class="headerlink" title="设计第一个小程序"></a>设计第一个小程序</h1><h2 id="打开微信开发者工具"><a href="#打开微信开发者工具" class="headerlink" title="打开微信开发者工具"></a>打开微信开发者工具</h2><p>打开编辑器，首先进行扫码登陆。</p>
-<h2 id="获取AppID"><a href="#获取AppID" class="headerlink" title="获取AppID"></a>获取AppID</h2><p>进入<a href="https://mp.weixin.qq.com/wxamp/home/guide?lang=zh_CN&amp;token=1940385651">小程序管理界面</a>，进行ID的获取。后续创建小程序时用。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/AppID.1y8ys41qw30g.jpg" alt="AppID"></p>
-<h2 id="创建小程序"><a href="#创建小程序" class="headerlink" title="创建小程序"></a>创建小程序</h2><p>点击加号，创建小程序</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/新建小程序.lhcpets7cwg.jpg" alt="新建小程序"></p>
-<h2 id="预览显示"><a href="#预览显示" class="headerlink" title="预览显示"></a>预览显示</h2><p>当在编辑器左侧出现下面的预览，则表示小程序创建成功了。</p>
-<blockquote>
-<p>在小程序的创建中成功率很高的，只要获取到AppID就可以顺利创建。</p>
-</blockquote>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/预览.goqu804i26o.jpg" alt="预览"></p>
-<h2 id="vant安装"><a href="#vant安装" class="headerlink" title="vant安装"></a>vant安装</h2><blockquote>
-<p>在vant中可能会出现npm构建失败的情况。本文与官方教程有所不同，本人使用官方教程未成功。</p>
-</blockquote>
-<p>1.在项目中进入终端</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/新建终端.1zj1pad9ptpc.jpg" alt="新建终端"></p>
-<p>2.输入npm init -y</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm init -y </span><br></pre></td></tr></table></figure>
-<p>如果npm报错，在使用npm前加上sudo</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo npm init -y </span><br></pre></td></tr></table></figure>
-<p>3.安装vant</p>
-<p>在终端输入npm i @vant/weapp -S —omit=dev</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo npm i @vant/weapp -S --omit=dev </span><br></pre></td></tr></table></figure>
-<p>4.修改 app.json</p>
-<p>进入app.json中找到”style”: “v2”，将其删除。</p>
-<blockquote>
-<p>在第11行</p>
-</blockquote>
-<p>5.修改 project.config.json</p>
-<p>在project.config.json中，找到packNpmRelationList。</p>
-<blockquote>
-<p>文件中第16行</p>
-</blockquote>
-<p>在[ ]中填入以下内容，</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;packageJsonPath&quot;</span>:<span class="string">&quot;./package.json&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;miniprogramNpmDistDir&quot;</span>:<span class="string">&quot;./&quot;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在此步骤与官方文档不同，区别在于miniprogramNpmDistDir后的路径。按照官方示例的路径，在npm构建中会失败。</p>
-</blockquote>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/修改-project.config.json.3iukvzmw7ig0.jpg" alt="修改-project"></p>
-<p>6.构建npm</p>
-<p>在工具中选择构建npm</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/构建npm.2kepz27y98k0.jpg" alt="构建npm"></p>
-<p>成功构建出现弹窗</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/成功构建npm.1wgo37go9pk0.jpg" alt="成功构建npm"></p>
-<p>7.更改本地设置</p>
-<p>首先点击右上角的详情，然后更改调试基础库，选择2.33.0，本人在使用3.0.0时渲染出错。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/iShot_2023-08-05_11.50.32.6bs73t8w9e40.jpg" alt="iShot_2023-08-05_11"></p>
-<p>至此vant安装完成。</p>
-<h2 id="引入组件"><a href="#引入组件" class="headerlink" title="引入组件"></a>引入组件</h2><p>在app.json中最后处添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;usingComponents&quot;: &#123;</span><br><span class="line">    &quot;van-button&quot;: &quot;@vant/weapp/button/index&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>注意在上行处添加逗号。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/引入组件.1i0z52707f34.jpg" alt="引入组件"></p>
-<h2 id="使用组件"><a href="#使用组件" class="headerlink" title="使用组件"></a>使用组件</h2><p>在index.wxml中添加按钮</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;van-button type=&quot;default&quot;&gt;默认按钮&lt;/van-button&gt;</span><br><span class="line">&lt;van-button type=&quot;primary&quot;&gt;主要按钮&lt;/van-button&gt;</span><br><span class="line">&lt;van-button type=&quot;info&quot;&gt;信息按钮&lt;/van-button&gt;</span><br><span class="line">&lt;van-button type=&quot;warning&quot;&gt;警告按钮&lt;/van-button&gt;</span><br><span class="line">&lt;van-button type=&quot;danger&quot;&gt;危险按钮&lt;/van-button&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/添加按钮.79d8j0igx3c0.jpg" alt="添加按钮"></p>
-<p>保存后，编译完成，在左侧渲染出即可显示出添加的按钮。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/小程序开发环境搭建/渲染结果.5ozeg9x0ak40.jpg" alt="渲染结果"></p>
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><p>当我们重新打开工程时，可能会出现编译错误的情况，此时我们重新构建npm大概率会解决问题。</p>
-]]></content>
-      <categories>
-        <category>微信小程序</category>
-      </categories>
-      <tags>
-        <tag>小程序</tag>
-        <tag>vant</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>海凌科指纹模块</title>
-    <url>/2023/04/19/%E6%B5%B7%E5%87%8C%E7%A7%91%E6%8C%87%E7%BA%B9%E6%A8%A1%E5%9D%97/</url>
-    <content><![CDATA[<h2 id="海凌科指纹模块"><a href="#海凌科指纹模块" class="headerlink" title="海凌科指纹模块"></a>海凌科指纹模块</h2><p>一款模块最重要的资料是官方指导资料，<a href="https://h.hlktech.com/Mobile/download/fdetail/177.html">指纹模块官方资料下载</a>。本文是根据官方指导资料提炼出更方便开发的使用指南。</p>
-<p>此款指纹模块与传统的指纹模块最大的区别是通信方式的区别，海凌科很多模块都是通过串口通信进行数据交互。</p>
-<p>有关串口通信的相关知识，请看此篇博客。</p>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="清空指纹库"><a href="#清空指纹库" class="headerlink" title="清空指纹库"></a>清空指纹库</h3><p><code>发送指令</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0A <span class="number">83</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">01</span> <span class="number">00</span> <span class="number">01</span> <span class="variable constant_">C7</span></span><br></pre></td></tr></table></figure>
-<p><code>应答结果</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="variable constant_">C9</span> </span><br></pre></td></tr></table></figure>
-<h3 id="指纹录入"><a href="#指纹录入" class="headerlink" title="指纹录入"></a>指纹录入</h3><p><code>说明</code>：此功能使用的是自动的指纹录入，只需设置录入次数即可，指纹ID是自动分配的。按下一次抬起，再次按下。</p>
-<p><code>发送指令</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">18</span> <span class="number">01</span> <span class="number">03</span> <span class="variable constant_">FF</span> <span class="variable constant_">FF</span> <span class="variable constant_">E5</span></span><br></pre></td></tr></table></figure>
-<h3 id="指纹识别"><a href="#指纹识别" class="headerlink" title="指纹识别"></a>指纹识别</h3><p><code>发送指令</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> <span class="number">07</span> <span class="number">86</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">23</span> <span class="variable constant_">DC</span></span><br></pre></td></tr></table></figure>
-<p><code>应答结果</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="variable constant_">C9</span> </span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>嵌入式</category>
-      </categories>
-      <tags>
-        <tag>指纹模块</tag>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文献管理一个zetero足够了</title>
-    <url>/2023/04/17/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E4%B8%80%E4%B8%AAzetero%E8%B6%B3%E5%A4%9F%E4%BA%86/</url>
-    <content><![CDATA[<p><code>zetero</code>是一款开源的文献管理软件，个人账户拥有300M的免费空间，当空间不够时，可以关联自己的私人网盘。</p>
-<p>zetero的功能非常的强大。目前，在zetero中可以上传pdf文件，可对文献进行各种分类，自动识别文献的作者、期刊、时间等信息，对英文文献进行翻译，阅读PDF，笔记等功能。</p>
-<p>zetero拥有丰富的插件，可以通过各种插件实现各种想要的功能。下面将介绍如何在macOS环境下使用zetero进行文献的管理（windows大同小异），并通过安装插件的方式完善zetero的功能。</p>
-<h1 id="zetero安装"><a href="#zetero安装" class="headerlink" title="zetero安装"></a>zetero安装</h1><ol>
-<li><p>从zetero官网中下载安装包</p>
-<p><a href="https://www.zotero.org">zetero官网</a></p>
-</li>
-<li>根据提示进行安装</li>
-<li>在官网注册自己的账号</li>
-</ol>
-<h1 id="zetero插件"><a href="#zetero插件" class="headerlink" title="zetero插件"></a>zetero插件</h1><p>zetero拥有很多插件，都在Github上进行了开源，访问GitHub进行下载，本文将附上每个插件对应的GitHub仓库。（访问速度慢，请进行科学上网，或使用GitHub加速软件）</p>
-<p>避免链接失效的风险，我将使用到的插件保存到GitHub中作为一个备份，在此GitHub仓库中的插件版本不一定是最新版本获取最新版本的插件，请到各插件详情提供的链接中下载。</p>
-<p><a href="https://github.com/KB-talk/zetero_plugs">备份插件仓库</a></p>
-<h2 id="插件安装方法"><a href="#插件安装方法" class="headerlink" title="插件安装方法"></a>插件安装方法</h2><ol>
-<li>下载将要安装的 <code>插件</code>，插件的格式为 <code>xpi</code>格式。</li>
-<li>点击菜单栏中的工具，选择附加组件，点击齿轮，选择从文件添加，选择要添加的插件。<code>工具——&gt;附加组件——&gt;齿轮——&gt;install Add-on From File——&gt;&#39;插件文件.xpi&#39;</code></li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/选择添加附件.7jjbqk09cs80.png" alt="选择添加附件"></p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/安装插件.6ry7unntdu80.png" alt="安装插件"></p>
-<ol>
-<li>重启软件</li>
-</ol>
-<h2 id="翻译-zotero-pdf-translate-xpi"><a href="#翻译-zotero-pdf-translate-xpi" class="headerlink" title="翻译-zotero-pdf-translate.xpi"></a>翻译-zotero-pdf-translate.xpi</h2><p>zetero提供了在阅读英文文献时 <code>翻译</code>的插件，支持 <code>选择翻译</code>，使用鼠标选取翻译内容即可完成翻译。若滑词翻译无效，在zetero的首选项中切换翻译接口。</p>
-<p>使用效果</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/使用效果.1dfnkxysua5c.png" alt="使用效果"></p>
-<p><a href="https://github.com/windingwind/zotero-pdf-translate/releases">zetero翻译插件链接</a></p>
-<h2 id="笔记-zotero-better-notes-xpi"><a href="#笔记-zotero-better-notes-xpi" class="headerlink" title="笔记-zotero-better-notes.xpi"></a>笔记-zotero-better-notes.xpi</h2><p>zetero本身是具有笔记功能的，此插件丰富了zetero本身的笔记功能，可以整理文献中所记录的笔记，可以将笔记以脑图、树图、列表形式展示。</p>
-<p>此插件的功能非常强大，还可以与word等软件关联，具体的使用还需进一步的探讨。</p>
-<h2 id="中文论文信息提取-jasminum-v0-1-8-xpi"><a href="#中文论文信息提取-jasminum-v0-1-8-xpi" class="headerlink" title="中文论文信息提取-jasminum-v0.1.8.xpi"></a>中文论文信息提取-jasminum-v0.1.8.xpi</h2><p>zetero本身只能识别出英文文献的信息，通过这个插件，可以自动提取知网数据。</p>
-<p>使用效果</p>
-<p>正常上传中文文献是没有任何信息的</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/无信息.cf1k0ak374w.png" alt="无信息"></p>
-<p>使用知网助手后</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/使用知网助手生成信息.3qxcednalho0.png" alt="使用知网助手生成信息"></p>
-<p>生成对应的信息</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/生成论文信息.5qpc2jbcsf00.png" alt="生成论文信息"></p>
-<p>安装方法</p>
-<ol>
-<li><a href="https://github.com/l0o0/jasminum/releases">下载插件</a></li>
-<li>安装插件，重启软件</li>
-<li>打开zetero首选项，按照图片配置，并设置好PDFtk</li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/配置1.2fxqdr7b5c00.png" alt="配置1"></p>
-<ol>
-<li>进入非官方维护中文翻译器，点击刷新，再点击更新全部</li>
-</ol>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/配置2.6c0yl0w58lc0.png" alt="配置2"></p>
-<ol>
-<li>导入中文论文，使用知网助手提取论文信息</li>
-</ol>
-<h2 id="参考文献-zotero-better-bibtex-6-7-75-xpi"><a href="#参考文献-zotero-better-bibtex-6-7-75-xpi" class="headerlink" title="参考文献-zotero-better-bibtex-6.7.75.xpi"></a>参考文献-zotero-better-bibtex-6.7.75.xpi</h2><p><a href="https://github.com/retorquere/zotero-better-bibtex/releases/tag/v6.7.75">下载链接</a></p>
-<p>此插件可以生成一个参考文献数据库，可以使用latex以及word进行引用。使用此款插件引用参考文献可以自定义参考文献的格式，且生成的参考文献的序号随着引用的顺序自动更新，当添加新的参考文献或者删除时，可以自动的更新编号，大大的降低了参考文献的引用难度。</p>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><blockquote>
-<p>参考本文的使用方法，需成功安装上述插件。</p>
-</blockquote>
-<h2 id="新建群组、分类"><a href="#新建群组、分类" class="headerlink" title="新建群组、分类"></a>新建群组、分类</h2><p>打开 <code>zetero</code>,在软件左上角可以选择新建群组和分类。通常个人使用使用的是 <code>新建分类</code>，新建分类类似于新建文件夹的功能。<code>新建群组</code>是用于团队使用的，在群组中的内容是可以共享的。</p>
-<h2 id="添加中文文献"><a href="#添加中文文献" class="headerlink" title="添加中文文献"></a>添加中文文献</h2><ol>
-<li>下载论文</li>
-<li>将下载的论文拖入zetero中</li>
-<li>zetero将自动识别提取相关信息，若没有自动提取，右键选择 <code>知网助手</code>即可</li>
-</ol>
-<p>添加后的效果如下：</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/中文文献成功添加.7haag279now0.png" alt="中文文献成功添加"></p>
-<p><code>可能遇到的问题</code>：</p>
-<p>导入中文参考文献无法提取数据信息</p>
-<p><code>解决办法</code>：</p>
-<ol>
-<li><code>更换下载论文的途径</code>。通过亲身实践，在知网官网下载的论文大概率是可以识别成功的，但是使用其他途径下载的中文论文可能出现失败的情况。</li>
-<li><code>手动添加信息</code>。具体方法如下，在知网中，选择引用此文献，选择引用Endnote格式，复制到剪切板中，在zetero菜单中选择文件，选择 <code>从剪切板导入</code>选项，zetero将完成信息的导入。</li>
-</ol>
-<blockquote>
-<p>友情提醒：虽然使用自动识别固然方便，但是也存在出错的情况，完成论文后，亲自检查一下更为稳妥。</p>
-</blockquote>
-<h2 id="添加英文文献"><a href="#添加英文文献" class="headerlink" title="添加英文文献"></a>添加英文文献</h2><p>使用zetero添加英文文献相对中文文献将更简单一些。将英文文献拖入对应的分类中即可。</p>
-<h2 id="生成参考文献列表"><a href="#生成参考文献列表" class="headerlink" title="生成参考文献列表"></a>生成参考文献列表</h2><h2 id="编辑参考文献格式"><a href="#编辑参考文献格式" class="headerlink" title="编辑参考文献格式"></a>编辑参考文献格式</h2><h2 id="在Latex中调用参考文献列表"><a href="#在Latex中调用参考文献列表" class="headerlink" title="在Latex中调用参考文献列表"></a>在Latex中调用参考文献列表</h2><p>有关zetero的使用方法，将陆续的进行更新。</p>
-<h1 id="使用坚果云配置云同步扩大网盘容量"><a href="#使用坚果云配置云同步扩大网盘容量" class="headerlink" title="使用坚果云配置云同步扩大网盘容量"></a>使用坚果云配置云同步扩大网盘容量</h1><h2 id="下载并注册坚果云"><a href="#下载并注册坚果云" class="headerlink" title="下载并注册坚果云"></a>下载并注册坚果云</h2><p>1.<a href="https://www.jianguoyun.com/s/downloads">坚果云下载链接</a>，按照提示下载对应版本，并注册账号。</p>
-<p>2.安装完成后，<code>登录账号</code>，<code>选择网页端</code>，在APP中有个 <code>地球</code>的标志。</p>
-<p>3.进入网页端后，选择 <code>账户信息</code>选项。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/账户信息.6odx3oaq0j40.png" alt="账户信息"></p>
-<p>4.再选择 <code>安全选项</code>，并拉到最后。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/安全选项.7jjx07mk78k0.png" alt="安全选项"></p>
-<p>5.点击添加应用，名称输入 <code>zetero</code>，根据提示点击 <code>生成应用密码</code>。坚果云配置完成。</p>
-<h2 id="配置zetero"><a href="#配置zetero" class="headerlink" title="配置zetero"></a>配置zetero</h2><p>1.进入 <code>zetero首选项</code>，进入 <code>同步</code>界面，更改 <code>文献同步</code>选项。</p>
-<blockquote>
-<p>坚果云免费版用户容量也是限额的，但是每个月上传为1G，下载为3.6G,对于我们普通备份文献来说够用了。</p>
-</blockquote>
-<p>2.将同步方式改为 <code>WebDAV</code>。</p>
-<p>3.网址后面输入 <code>dav.jianguoyun.com/dav</code></p>
-<p>4.用户名称与密码在坚果云的网页端可以查看到。将对应的信息输入，然后点击 <code>验证服务器</code>，会提示生成一个文件夹，点击 <code>生成</code>即可。</p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/示例.2lqrsek8si60.png" alt="示例"></p>
-<p><img src="https://cdn.staticaly.com/gh/KB-talk/picx-images-hosting@master/文献管理一个zetero足够了/验证服务器.3v9sxmveydk0.png" alt="验证服务器"></p>
-<p>5.将 <code>所有使用zetero的设备</code>都是用 <code>WebDAV</code>进行配置一遍，这样所有的设备都是用的是 <code>坚果云盘</code>。</p>
-<h2 id="文献同步"><a href="#文献同步" class="headerlink" title="文献同步"></a>文献同步</h2><p>回到 <code>zetero</code>中，点击右上角的 <code>同步</code>图标进行同步。</p>
-]]></content>
-      <categories>
-        <category>论文</category>
-      </categories>
-      <tags>
-        <tag>zetero</tag>
-        <tag>论文</tag>
       </tags>
   </entry>
 </search>
