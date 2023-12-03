@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Clash赋予brew新生</title>
+    <url>/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/</url>
+    <content><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>VPN已经用了很长时间了，经常都是用在访问GitHub，今天在使用brew安装第三方库的时候，经常因为速度下载失败，这时候突然想起能不能用VPN来加速brew下载呢.<br>使用Clash打开vpn，在使用brew时并没有起到加速作用。在clash中看见一个选项，<code>复制终端代理命令</code>。</p>
+<h1 id="如何使用clash加速brew下载"><a href="#如何使用clash加速brew下载" class="headerlink" title="如何使用clash加速brew下载"></a>如何使用clash加速brew下载</h1><p>1.进入clash界面，选择复制终端代理命令</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/clash赋予brew新生/clash界面.4u76t0zzdh20.jpg" alt="clash界面"></p>
+<p>2.打开终端，在终端中输入刚刚复制的命令，按下回车即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/clash赋予brew新生/应用.3s9laykl2460.jpg" alt="应用"></p>
+<p>3.接下来使用brew下载即可</p>
+<p>此时会发现brew下载会非常的迅速了，不会因为下载速度而失败了。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>Clash</tag>
+        <tag>brew加速</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++学习笔记</title>
     <url>/2023/05/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>MacOS venture13</p>
@@ -69,22 +88,36 @@
       </tags>
   </entry>
   <entry>
-    <title>Clash赋予brew新生</title>
-    <url>/2023/05/06/clash%E8%B5%8B%E4%BA%88brew%E6%96%B0%E7%94%9F/</url>
-    <content><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>VPN已经用了很长时间了，经常都是用在访问GitHub，今天在使用brew安装第三方库的时候，经常因为速度下载失败，这时候突然想起能不能用VPN来加速brew下载呢.<br>使用Clash打开vpn，在使用brew时并没有起到加速作用。在clash中看见一个选项，<code>复制终端代理命令</code>。</p>
-<h1 id="如何使用clash加速brew下载"><a href="#如何使用clash加速brew下载" class="headerlink" title="如何使用clash加速brew下载"></a>如何使用clash加速brew下载</h1><p>1.进入clash界面，选择复制终端代理命令</p>
-<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/clash赋予brew新生/clash界面.4u76t0zzdh20.jpg" alt="clash界面"></p>
-<p>2.打开终端，在终端中输入刚刚复制的命令，按下回车即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/clash赋予brew新生/应用.3s9laykl2460.jpg" alt="应用"></p>
-<p>3.接下来使用brew下载即可</p>
-<p>此时会发现brew下载会非常的迅速了，不会因为下载速度而失败了。</p>
+    <title>Latex安装与配置</title>
+    <url>/2023/05/03/Latex%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="相关下载"><a href="#相关下载" class="headerlink" title="相关下载"></a>相关下载</h1><p>Mac Latex下载地址：<a href="https://tug.org/mactex/mactex-download.html">官网下载链接</a>（安装后需要重启）<br>vs code下载地址：<a href="https://code.visualstudio.com/Download">官网下载地址</a></p>
+<p>vs code插件：<code>LaTeX Workshop</code></p>
+<p>打开vscode，左边工具栏里有个<strong>扩展</strong>栏，选中它！再在搜索框里面搜索 <strong><code>LaTeX Workshop</code></strong> ，如下图所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/Latex安装与配置/LaTeX插件.2qnezkscek20.jpg" alt="LaTeX插件"></p>
+<h1 id="vs-code相关配置"><a href="#vs-code相关配置" class="headerlink" title="vs code相关配置"></a>vs code相关配置</h1><p>在vscode页面，按下 <code>f1</code>，输入 <code>json</code>，选择 <code>首选项</code>：打开设置这一项，如下图所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/Latex安装与配置/首选项.4ova6els8h60.jpg" alt="首选项"><br>如果使用vs code配置过其他插件，在其末尾继续添加以下内容(注意：添加时，需要在存在的末尾处添加逗号)：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;latex-workshop.latex.tools&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.recipes&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xe-&gt;bib-&gt;xe-&gt;xe&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdf-&gt;bib-&gt;pdf-&gt;pdf&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.clean.fileTypes&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;*.aux&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.bbl&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.blg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.idx&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.ind&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.lof&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.lot&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.out&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.toc&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.acn&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.acr&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.alg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.glg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.glo&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.gls&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.ist&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.fls&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.log&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.fdb_latexmk&quot;</span></span><br><span class="line">],</span><br><span class="line"><span class="comment">//tex文件浏览器，可选项为&quot;none&quot; &quot;browser&quot; &quot;tab&quot; &quot;external&quot;</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.viewer&quot;</span>: <span class="string">&quot;tab&quot;</span>,</span><br><span class="line"><span class="comment">//自动编译tex文件</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoBuild.run&quot;</span>: <span class="string">&quot;onFileChange&quot;</span>,</span><br><span class="line"><span class="comment">//显示内容菜单：（1）编译文件；（2）定位游标</span></span><br><span class="line"><span class="string">&quot;latex-workshop.showContextMenu&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="comment">//显示错误</span></span><br><span class="line"><span class="string">&quot;latex-workshop.message.error.show&quot;</span>: <span class="literal">false</span>,</span><br><span class="line"><span class="comment">//显示警告</span></span><br><span class="line"><span class="string">&quot;latex-workshop.message.warning.show&quot;</span>: <span class="literal">false</span>,</span><br><span class="line"><span class="comment">//从使用的包中自动补全命令和环境</span></span><br><span class="line"><span class="string">&quot;latex-workshop.intellisense.package.enabled&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="comment">//设置为never，为不清除辅助文件</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoClean.run&quot;</span>: <span class="string">&quot;never&quot;</span>,</span><br><span class="line"><span class="comment">//设置vscode编译tex文档时的默认编译链</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.recipe.default&quot;</span>: <span class="string">&quot;lastUsed&quot;</span>,</span><br><span class="line"><span class="comment">// 用于反向同步的内部查看器的键绑定。ctrl/cmd +点击(默认)或双击</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.internal.synctex.keybinding&quot;</span>: <span class="string">&quot;double-click&quot;</span>,</span><br></pre></td></tr></table></figure>
+<h1 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h1><p>从IEEE中下载一篇模版，<a href="https://template-selector.ieee.org/secure/templateSelector/downloadTemplate?publicationTypeId=2&amp;titleId=163&amp;articleId=3&amp;fileId=297">模版下载链接</a>。</p>
+<p>使用vs code打开模版，选择编辑器，编辑后在右侧打开pdf进行预览查看。</p>
+<h1 id="在线编辑"><a href="#在线编辑" class="headerlink" title="在线编辑"></a>在线编辑</h1><p>Latex可以在本地运行，也可以在网页端进行编辑，虽然存在部分功能需要付费。<br><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://cn.overleaf.com/project">
+    <div class="tag-link-tips">引用站外地址</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left" style="">
+          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>
+        </div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">Latex在线编辑</div>
+            <div class="tag-link-sitename">Overleaf</div>
+        </div>
+        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>
+    </div>
+    </a></div></p>
 ]]></content>
       <categories>
         <category>环境配置</category>
       </categories>
       <tags>
-        <tag>Clash</tag>
-        <tag>brew加速</tag>
+        <tag>latex</tag>
       </tags>
   </entry>
   <entry>
@@ -129,39 +162,6 @@
       </categories>
       <tags>
         <tag>gergebra</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex安装与配置</title>
-    <url>/2023/05/03/Latex%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="相关下载"><a href="#相关下载" class="headerlink" title="相关下载"></a>相关下载</h1><p>Mac Latex下载地址：<a href="https://tug.org/mactex/mactex-download.html">官网下载链接</a>（安装后需要重启）<br>vs code下载地址：<a href="https://code.visualstudio.com/Download">官网下载地址</a></p>
-<p>vs code插件：<code>LaTeX Workshop</code></p>
-<p>打开vscode，左边工具栏里有个<strong>扩展</strong>栏，选中它！再在搜索框里面搜索 <strong><code>LaTeX Workshop</code></strong> ，如下图所示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/Latex安装与配置/LaTeX插件.2qnezkscek20.jpg" alt="LaTeX插件"></p>
-<h1 id="vs-code相关配置"><a href="#vs-code相关配置" class="headerlink" title="vs code相关配置"></a>vs code相关配置</h1><p>在vscode页面，按下 <code>f1</code>，输入 <code>json</code>，选择 <code>首选项</code>：打开设置这一项，如下图所示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/Latex安装与配置/首选项.4ova6els8h60.jpg" alt="首选项"><br>如果使用vs code配置过其他插件，在其末尾继续添加以下内容(注意：添加时，需要在存在的末尾处添加逗号)：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;latex-workshop.latex.tools&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span>,</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;command&quot;</span>: <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.recipes&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;xe-&gt;bib-&gt;xe-&gt;xe&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;pdf-&gt;bib-&gt;pdf-&gt;pdf&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tools&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span>,</span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"><span class="string">&quot;latex-workshop.latex.clean.fileTypes&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;*.aux&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.bbl&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.blg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.idx&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.ind&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.lof&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.lot&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.out&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.toc&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.acn&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.acr&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.alg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.glg&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.glo&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.gls&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.ist&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.fls&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.log&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.fdb_latexmk&quot;</span></span><br><span class="line">],</span><br><span class="line"><span class="comment">//tex文件浏览器，可选项为&quot;none&quot; &quot;browser&quot; &quot;tab&quot; &quot;external&quot;</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.viewer&quot;</span>: <span class="string">&quot;tab&quot;</span>,</span><br><span class="line"><span class="comment">//自动编译tex文件</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoBuild.run&quot;</span>: <span class="string">&quot;onFileChange&quot;</span>,</span><br><span class="line"><span class="comment">//显示内容菜单：（1）编译文件；（2）定位游标</span></span><br><span class="line"><span class="string">&quot;latex-workshop.showContextMenu&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="comment">//显示错误</span></span><br><span class="line"><span class="string">&quot;latex-workshop.message.error.show&quot;</span>: <span class="literal">false</span>,</span><br><span class="line"><span class="comment">//显示警告</span></span><br><span class="line"><span class="string">&quot;latex-workshop.message.warning.show&quot;</span>: <span class="literal">false</span>,</span><br><span class="line"><span class="comment">//从使用的包中自动补全命令和环境</span></span><br><span class="line"><span class="string">&quot;latex-workshop.intellisense.package.enabled&quot;</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="comment">//设置为never，为不清除辅助文件</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.autoClean.run&quot;</span>: <span class="string">&quot;never&quot;</span>,</span><br><span class="line"><span class="comment">//设置vscode编译tex文档时的默认编译链</span></span><br><span class="line"><span class="string">&quot;latex-workshop.latex.recipe.default&quot;</span>: <span class="string">&quot;lastUsed&quot;</span>,</span><br><span class="line"><span class="comment">// 用于反向同步的内部查看器的键绑定。ctrl/cmd +点击(默认)或双击</span></span><br><span class="line"><span class="string">&quot;latex-workshop.view.pdf.internal.synctex.keybinding&quot;</span>: <span class="string">&quot;double-click&quot;</span>,</span><br></pre></td></tr></table></figure>
-<h1 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h1><p>从IEEE中下载一篇模版，<a href="https://template-selector.ieee.org/secure/templateSelector/downloadTemplate?publicationTypeId=2&amp;titleId=163&amp;articleId=3&amp;fileId=297">模版下载链接</a>。</p>
-<p>使用vs code打开模版，选择编辑器，编辑后在右侧打开pdf进行预览查看。</p>
-<h1 id="在线编辑"><a href="#在线编辑" class="headerlink" title="在线编辑"></a>在线编辑</h1><p>Latex可以在本地运行，也可以在网页端进行编辑，虽然存在部分功能需要付费。<br><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://cn.overleaf.com/project">
-    <div class="tag-link-tips">引用站外地址</div>
-    <div class="tag-link-bottom">
-        <div class="tag-link-left" style="">
-          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>
-        </div>
-        <div class="tag-link-right">
-            <div class="tag-link-title">Latex在线编辑</div>
-            <div class="tag-link-sitename">Overleaf</div>
-        </div>
-        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>
-    </div>
-    </a></div></p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>latex</tag>
       </tags>
   </entry>
   <entry>
@@ -451,6 +451,32 @@
       </tags>
   </entry>
   <entry>
+    <title>海凌科指纹模块</title>
+    <url>/2023/04/19/%E6%B5%B7%E5%87%8C%E7%A7%91%E6%8C%87%E7%BA%B9%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[<h2 id="海凌科指纹模块"><a href="#海凌科指纹模块" class="headerlink" title="海凌科指纹模块"></a>海凌科指纹模块</h2><p>一款模块最重要的资料是官方指导资料，<a href="https://h.hlktech.com/Mobile/download/fdetail/177.html">指纹模块官方资料下载</a>。本文是根据官方指导资料提炼出更方便开发的使用指南。</p>
+<p>此款指纹模块与传统的指纹模块最大的区别是通信方式的区别，海凌科很多模块都是通过串口通信进行数据交互。</p>
+<p>有关串口通信的相关知识，请看此篇博客。</p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="清空指纹库"><a href="#清空指纹库" class="headerlink" title="清空指纹库"></a>清空指纹库</h3><p><code>发送指令</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0A <span class="number">83</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">01</span> <span class="number">00</span> <span class="number">01</span> <span class="variable constant_">C7</span></span><br></pre></td></tr></table></figure>
+<p><code>应答结果</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="variable constant_">C9</span> </span><br></pre></td></tr></table></figure>
+<h3 id="指纹录入"><a href="#指纹录入" class="headerlink" title="指纹录入"></a>指纹录入</h3><p><code>说明</code>：此功能使用的是自动的指纹录入，只需设置录入次数即可，指纹ID是自动分配的。按下一次抬起，再次按下。</p>
+<p><code>发送指令</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">18</span> <span class="number">01</span> <span class="number">03</span> <span class="variable constant_">FF</span> <span class="variable constant_">FF</span> <span class="variable constant_">E5</span></span><br></pre></td></tr></table></figure>
+<h3 id="指纹识别"><a href="#指纹识别" class="headerlink" title="指纹识别"></a>指纹识别</h3><p><code>发送指令</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> <span class="number">07</span> <span class="number">86</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">23</span> <span class="variable constant_">DC</span></span><br></pre></td></tr></table></figure>
+<p><code>应答结果</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="variable constant_">C9</span> </span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>嵌入式</category>
+      </categories>
+      <tags>
+        <tag>指纹模块</tag>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>简单聊一下深度学习</title>
     <url>/2023/09/05/%E5%AF%B9%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>现在，处理器的处理速度已经很快了，特别用于机器学习的GPU，其算力已经以<strong>T</strong>为单位。在此社会背景下，需要大量计算的人工智能的到了迅速的发展，<mark class="hl-label default">AI</mark> 这个词已经随处可见了，很多产品也开始打着<strong>AI</strong>的标签提高竞争力。</p>
@@ -480,32 +506,6 @@
       <tags>
         <tag>深度学习</tag>
         <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>海凌科指纹模块</title>
-    <url>/2023/04/19/%E6%B5%B7%E5%87%8C%E7%A7%91%E6%8C%87%E7%BA%B9%E6%A8%A1%E5%9D%97/</url>
-    <content><![CDATA[<h2 id="海凌科指纹模块"><a href="#海凌科指纹模块" class="headerlink" title="海凌科指纹模块"></a>海凌科指纹模块</h2><p>一款模块最重要的资料是官方指导资料，<a href="https://h.hlktech.com/Mobile/download/fdetail/177.html">指纹模块官方资料下载</a>。本文是根据官方指导资料提炼出更方便开发的使用指南。</p>
-<p>此款指纹模块与传统的指纹模块最大的区别是通信方式的区别，海凌科很多模块都是通过串口通信进行数据交互。</p>
-<p>有关串口通信的相关知识，请看此篇博客。</p>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="清空指纹库"><a href="#清空指纹库" class="headerlink" title="清空指纹库"></a>清空指纹库</h3><p><code>发送指令</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0A <span class="number">83</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">01</span> <span class="number">00</span> <span class="number">01</span> <span class="variable constant_">C7</span></span><br></pre></td></tr></table></figure>
-<p><code>应答结果</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="variable constant_">C9</span> </span><br></pre></td></tr></table></figure>
-<h3 id="指纹录入"><a href="#指纹录入" class="headerlink" title="指纹录入"></a>指纹录入</h3><p><code>说明</code>：此功能使用的是自动的指纹录入，只需设置录入次数即可，指纹ID是自动分配的。按下一次抬起，再次按下。</p>
-<p><code>发送指令</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">18</span> <span class="number">01</span> <span class="number">03</span> <span class="variable constant_">FF</span> <span class="variable constant_">FF</span> <span class="variable constant_">E5</span></span><br></pre></td></tr></table></figure>
-<h3 id="指纹识别"><a href="#指纹识别" class="headerlink" title="指纹识别"></a>指纹识别</h3><p><code>发送指令</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> <span class="number">07</span> <span class="number">86</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">23</span> <span class="variable constant_">DC</span></span><br></pre></td></tr></table></figure>
-<p><code>应答结果</code>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">F1</span> 1F <span class="variable constant_">E2</span> 2E <span class="variable constant_">B6</span> 6B <span class="variable constant_">A8</span> 8A <span class="number">00</span> 0B <span class="number">82</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">36</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="variable constant_">C9</span> </span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>嵌入式</category>
-      </categories>
-      <tags>
-        <tag>指纹模块</tag>
-        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
