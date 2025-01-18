@@ -1,0 +1,781 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Smartfusion2开发学习记录-开发环境搭建 | 凯博の博客</title><meta name="keywords" content="Smartfusion2,FPGA,创建项目"><meta name="author" content="张凯博"><meta name="copyright" content="张凯博"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Smartfusion2开发学习记录-开发环境搭建"><meta name="application-name" content="Smartfusion2开发学习记录-开发环境搭建"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Smartfusion2开发学习记录-开发环境搭建"><meta property="og:url" content="https://kb-talk.github.io/2025/01/16/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html"><meta property="og:site_name" content="凯博の博客"><meta property="og:description" content="开发环境 硬件平台：Smartfusion2 芯片型号：M2S010T-FG484 电脑系统： Windows 11 FPGA开发：Libero SoC v11.9 ARM开发：Keil4 uVision 开发板： 由于在学习官方历程时，使用Libero SoC v2024.2.0版本，发现无法打开"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/40.191mbxr26xmo.jpg?_r_=de009473-94b5-2ce0-385b-42f4fd970a2c"><meta property="article:author" content="张凯博"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/40.191mbxr26xmo.jpg?_r_=de009473-94b5-2ce0-385b-42f4fd970a2c"><meta name="description" content="开发环境 硬件平台：Smartfusion2 芯片型号：M2S010T-FG484 电脑系统： Windows 11 FPGA开发：Libero SoC v11.9 ARM开发：Keil4 uVision 开发板： 由于在学习官方历程时，使用Libero SoC v2024.2.0版本，发现无法打开"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/log.png"><link rel="canonical" href="https://kb-talk.github.io/2025/01/16/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: {"appId":"RAAC1NBZ1S","apiKey":"f7deda2542122841c0f52376001b3b46","indexName":"blog","hits":{"per_page":10},"languages":{"input_placeholder":"输入关键词后按下回车查找","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 张凯博","link":"链接: ","source":"来源: 凯博の博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '凯博の博客',
+  title: 'Smartfusion2开发学习记录-开发环境搭建',
+  postAI: '本文介绍了如何使用Libero Soc对Smartfusion2进行创建项目。',
+  pageFillDescription: '开发环境, Libero SoC v11.9下载链接, 免费license申请, 新建工程, 修改工程信息, 选择芯片型号, 配置器件, 设计样版与向导选择, 生成的工程, 配置MSS系统, 选择MSS系统中的使用模块, 设置MSS_CCC模块, 设置RESET_Controller模块, 设置IO口模块, 更新配置, 添加CCC、OSC、SYSRESET模块, 添加HDL, 画布布线, 添加仿真, 编译工程, 添加管脚约束, 文件构成, 导出Keil工程, 下载工程, 常见错误开发环境硬件平台芯片型号电脑系统开发开发开发板由于在学习官方历程时使用版本发现无法打开项目且按照教程创建的项目出现编译错误的情况因此使用版本若使用最新版本也可以参考此开发流程在使用开发程序时建议使用生成的工程在添加芯片型号时出现了问题因此使用进行开发下载链接引用站外地址百度网盘提取码引用站外地址官网最新版下载链接可以从官网免费下载但此版本号较低免费申请首先注册自己的账号若无法注册登录请切换网络点击申请免费许可证和管理许可证选择申请的许可证在终端输入查看盘的序列号与安装位置无关填写相应信息从填写的邮箱中获取并下载将下载的文件复制到软件安装的目录下添加环境变量新建三个环境变量依次为变量名变量值软件安装目录变量名变量值软件安装目录变量名变量值软件安装目录一定会用到若在破解此软件时也添加了变量值使用分隔两个变量值使用此方法可以在同个变量名中同时添加多个变量值新建工程修改工程信息打开开发环境点击输入工程名称修改存放位置选择芯片型号配置器件设计样版与向导选择主要区别在于是否生成图像化界面生成的工程配置系统选择系统中的使用模块双击或在菜单中选择进入配置页面使能模块呈现浅蓝色失能模块呈现灰色只使用只保留使能非必要使用模块失能设置模块双击进入参数设置设置模块设置口模块更新配置修改后点击保存关闭配置界面右键更新核添加模块选择菜单搜索添加到主界面中双击或拖拽都可以添加配置修改参数配置时钟源选择中的修改参数添加双击编辑并检查文件进入双击修改文件内容拖动到中保存后添加的文件会自动添加到中若已经创建了仿真新增加的也会自动添加到工程中若需要在仿真软件中添加信号线则需要在仿真文件中添加信号端口添加信号将信号线添加到顶层为后续添加管脚约束中能够找到端口画布布线为口添加标签将信号添加到顶层使用工具栏的连线工具进行连线然后点击工具即可生成配置添加仿真在设计流中右键创建一个仿真在中可以看到顶层和单独的文件都被添加到工程了在设计流中双击仿真自动打开软件开始仿真测试编译工程添加管脚约束文件构成若后续生成工程则会新增加文件夹导出工程在使用端时需要对进行编程因此需要将工程导出为工程双击选择需要添加的库双击即可导出工程打开工程选择后缀的文件即可打开工程首先编译工程文件编译后右键文件夹将文件夹打开魔术刷将设备改为进入选择开启确认下载工程点击生成需要下载的文件将下载器连接开发板后点击进行下载若需要生成烧录文件点击可以导出和文件常见错误在我们更换硬件资源比如删除了串口后重新执行时会出现报错分析错误信息得之网络列表中引脚错误解决方法为打开手动删除被移除的引脚信息重新编译即可当有时配置正确且通过时但在编译时出现了报错可能是自己添加的的引脚没有被操作修改前修改后添加引脚操作后即可解决报错问题若添加了自己的需要将设置为及顶层这样才能保证在管教约束时自己定义的核生成的引脚的引脚都能被检测到在编辑时注意名称和引脚名称不能够相同否则会出现错误错误代码',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-18 20:51:57',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/certen.65zy20o0kd00.jpg# 自定加载动画义头像"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/KB-talk" title="GitHub"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/github.4uotb3n6utq0.jpg" alt="GitHub"/><span class="back-menu-item-text">GitHub</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">工具</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://picx.xpoet.cn/#/upload" title="Picx图床管理"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.statically.io/gh/KB-talk/picx-images-hosting@master/img/logo.4sjf6ayt8740.png" alt="Picx图床管理"/><span class="back-menu-item-text">Picx图床管理</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.iconfont.cn" title="Icon图标"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/icon.35tedh3uxvpc.webp" alt="Icon图标"/><span class="back-menu-item-text">Icon图标</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">文档</div><div class="back-menu-list"><a class="back-menu-item" href="https://kb-talk.github.io/docs/" title="文档管理"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/logo.1p5rqa10pxsw.webp" alt="文档管理"/><span class="back-menu-item-text">文档管理</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">凯博の博客</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 软件链接</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="https://kb-talk.github.io/docs/"><i class="anzhiyufont anzhiyu-icon-book faa-tada" style="font-size: 0.9em;"></i><span> 文档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Blender/" style="font-size: 1.05rem;">Blender<sup>1</sup></a><a href="/tags/Clash/" style="font-size: 1.05rem;">Clash<sup>1</sup></a><a href="/tags/FPGA/" style="font-size: 1.05rem;">FPGA<sup>2</sup></a><a href="/tags/Fusion360/" style="font-size: 1.05rem;">Fusion360<sup>1</sup></a><a href="/tags/P2LR/" style="font-size: 1.05rem;">P2LR<sup>1</sup></a><a href="/tags/Smartfusion2/" style="font-size: 1.05rem;">Smartfusion2<sup>2</sup></a><a href="/tags/adobe/" style="font-size: 1.05rem;">adobe<sup>1</sup></a><a href="/tags/brew%E5%8A%A0%E9%80%9F/" style="font-size: 1.05rem;">brew加速<sup>1</sup></a><a href="/tags/latex/" style="font-size: 1.05rem;">latex<sup>1</sup></a><a href="/tags/platformIO/" style="font-size: 1.05rem;">platformIO<sup>1</sup></a><a href="/tags/ps/" style="font-size: 1.05rem;">ps<sup>1</sup></a><a href="/tags/pytorch/" style="font-size: 1.05rem;">pytorch<sup>1</sup></a><a href="/tags/vant/" style="font-size: 1.05rem;">vant<sup>1</sup></a><a href="/tags/zetero/" style="font-size: 1.05rem;">zetero<sup>1</sup></a><a href="/tags/%E4%BC%AA%E6%A0%87%E7%AD%BE/" style="font-size: 1.05rem;">伪标签<sup>1</sup></a><a href="/tags/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" style="font-size: 1.05rem;">创建项目<sup>1</sup></a><a href="/tags/%E5%8F%8C%E7%9B%AE%E7%9B%B8%E6%9C%BA%E6%A0%87%E5%AE%9A/" style="font-size: 1.05rem;">双目相机标定<sup>1</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 1.05rem;">图床<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.05rem;">小程序<sup>1</sup></a><a href="/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">无监督学习<sup>1</sup></a><a href="/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE%E7%BB%98%E5%88%B6/" style="font-size: 1.05rem;">流程图绘制<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">深度学习<sup>1</sup></a><a href="/tags/%E7%BB%BC%E5%90%88%E5%AE%9E%E9%AA%8C/" style="font-size: 1.05rem;">综合实验<sup>1</sup></a><a href="/tags/%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/" style="font-size: 1.05rem;">行人重识别<sup>1</sup></a><a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 1.05rem;">论文<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 1.05rem;">软件<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/01/"><span class="card-archive-list-date">一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Smartfusion2/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Smartfusion2</span></a><a class="article-meta__tags" href="/tags/FPGA/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>FPGA</span></a><a class="article-meta__tags" href="/tags/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>创建项目</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Smartfusion2开发学习记录-开发环境搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-01-16T02:56:19.000Z" title="发表于 2025-01-16 10:56:19">2025-01-16</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-01-18T12:51:57.077Z" title="更新于 2025-01-18 20:51:57">2025-01-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">1.4k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator"></span><span class="leancloud_visitors" id="/2025/01/16/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-flag-title="Smartfusion2开发学习记录-开发环境搭建"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span class="leancloud-visitors-count" title="访问量"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长春"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长春</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/40.191mbxr26xmo.jpg?_r_=de009473-94b5-2ce0-385b-42f4fd970a2c"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><div class="post-ai-description"><div class="ai-title"><i class="anzhiyufont anzhiyu-icon-bilibili"></i><div class="ai-title-text">AI-摘要</div><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i><i class="anzhiyufont anzhiyu-icon-circle-dot" title="朗读摘要"></i><div id="ai-tag">AnZhiYu GPT</div></div><div class="ai-explanation">AI初始化中...</div><div class="ai-btn-box"><div class="ai-btn-item">介绍自己 🙈</div><div class="ai-btn-item">生成本文简介 👋</div><div class="ai-btn-item">推荐相关文章 📖</div><div class="ai-btn-item">前往主页 🏠</div><div class="ai-btn-item" id="go-tianli-blog">前往爱发电购买</div></div><script data-pjax src="/js/anzhiyu/ai_abstract.js"></script></div><article class="post-content" id="article-container" itemscope itemtype="https://kb-talk.github.io/2025/01/16/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><header><a href="/tags/Smartfusion2/" tabindex="-1" itemprop="url">Smartfusion2</a><a href="/tags/FPGA/" tabindex="-1" itemprop="url">FPGA</a><a href="/tags/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" tabindex="-1" itemprop="url">创建项目</a><h1 id="CrawlerTitle" itemprop="name headline">Smartfusion2开发学习记录-开发环境搭建</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">张凯博</span><time itemprop="dateCreated datePublished" datetime="2025-01-16T02:56:19.000Z" title="发表于 2025-01-16 10:56:19">2025-01-16</time><time itemprop="dateCreated datePublished" datetime="2025-01-18T12:51:57.077Z" title="更新于 2025-01-18 20:51:57">2025-01-18</time></header><h1>开发环境</h1>
+<p>硬件平台：<code>Smartfusion2</code><br>
+芯片型号：<code>M2S010T-FG484</code><br>
+电脑系统： <code>Windows 11</code><br>
+FPGA开发：<code>Libero SoC v11.9</code><br>
+ARM开发：<code>Keil4 uVision</code><br>
+开发板：</p>
+<div class="tip "><p>由于在学习官方历程时，使用Libero SoC v2024.2.0版本，发现无法打开项目，且按照教程创建的项目出现编译错误的情况因此，使用Libero SoC v11.9版本。若使用最新版本，也可以参考此开发流程。</p>
+<p>在使用Keil4 uVision开发ARM程序时，建议使用keil4 uviuVision。生成的keil工程在添加芯片型号时，出现了问题，因此，使用Keil4 uVision进行开发。</p>
+</div>
+<h2 id="Libero-SoC-v11-9下载链接">Libero SoC v11.9下载链接</h2>
+<div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://pan.baidu.com/s/1WeF1RZ5-5k0aZyFViUpyjQ?pwd=e5xw">
+    <div class="tag-link-tips">引用站外地址</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left" style="">
+          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>
+        </div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">Libero SoC v11.9百度网盘 </div>
+            <div class="tag-link-sitename">提取码: e5xw</div>
+        </div>
+        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>
+    </div>
+    </a></div>
+<div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://www.microchip.com/en-us/products/fpgas-and-plds/fpga-and-soc-design-tools/fpga/libero-software-later-versions">
+    <div class="tag-link-tips">引用站外地址</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left" style="">
+          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>
+        </div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">Libero SoC官网最新版</div>
+            <div class="tag-link-sitename">下载链接</div>
+        </div>
+        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>
+    </div>
+    </a></div>
+<div class="tip info"><p>Libero SoC可以从官网免费下载，但此版本号较低。</p>
+</div>
+<h2 id="免费license申请">免费license申请</h2>
+<ol>
+<li>
+<p>首先，注册自己的账号，若无法注册登录，请切换网络。</p>
+</li>
+<li>
+<p>点击<code>申请免费许可证和管理许可证</code>。</p>
+</li>
+<li>
+<p>选择申请的许可证。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.5c12lt2z3m.webp" alt="申请许可证"></p>
+</li>
+<li>
+<p>在终端输入<code>vol c:</code>，查看C盘的序列号，与安装位置无关。</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vol c:</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>填写相应信息，从填写的邮箱中获取并下载license。将下载的license文件，复制到软件安装的目录下。</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.8vn0bma1qc.webp" alt="注册"></p>
+<ol start="6">
+<li>添加环境变量。</li>
+</ol>
+<p>新建三个环境变量，依次为：<br>
+变量名： <code>LM_LICENSE_FILE</code> 变量值： 软件安装目录\License.dat<br>
+变量名： <code>SNPSLMD_LICENSE_FILE</code> 变量值： 软件安装目录\License.dat<br>
+变量名： <code>SYNPLCTYD_LICENSE_FILE</code> 变量值： 软件安装目录\License.dat</p>
+<div class="tip warning"><p>一定会用到Modelime，若在破解此软件时，也添加了LM_LICENSE_FILE变量值，使用<code>;</code>分隔两个变量值。使用此方法可以在同个变量名中同时添加多个变量值。</p>
+</div>
+<h1>新建工程</h1>
+<h2 id="修改工程信息">修改工程信息</h2>
+<p>打开<code>Libero</code>开发环境，点击<code>Project</code>&gt;<code>New Project</code>。输入工程名称，修改存放位置。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.83a4rjsude.webp" alt="新建工程"></p>
+<h2 id="选择芯片型号">选择芯片型号</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.4xumsm14zt.webp" alt="选择芯片型号"></p>
+<h2 id="配置器件">配置器件</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.6wqtiya3q3.webp" alt="配置器件"></p>
+<h2 id="设计样版与向导选择">设计样版与向导选择</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.51e8qbz1r5.webp" alt="设计样版与向导选择"><br>
+主要区别在于是否生成图像化界面。</p>
+<h2 id="生成的工程">生成的工程</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.5c12jqe355.webp" alt="工程页面"></p>
+<h1>配置MSS系统</h1>
+<h2 id="选择MSS系统中的使用模块">选择<code>MSS</code>系统中的使用模块</h2>
+<p>双击<code>Key_MSS_0</code>或在Design Hierarchy菜单中选择Key_MSS，进入配置页面。</p>
+<p>使能模块呈现浅蓝色，失能模块呈现灰色；只使用GPIO，只保留GPIO使能，非必要使用模块失能。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.6bh5wwsk2x.webp" alt="Key_MSS_0配置界面"></p>
+<h2 id="设置MSS-CCC模块">设置<code>MSS_CCC</code>模块</h2>
+<p>双击MSS_CCC进入参数设置。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.13lv9x6uoj.webp" alt="MSS_CCC"></p>
+<h2 id="设置RESET-Controller模块">设置<code>RESET_Controller</code>模块</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.491d8v2ber.webp" alt="RESET_Controller"></p>
+<h2 id="设置IO口模块">设置<code>IO</code>口模块</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.86tqpjeu7n.webp" alt="IO"></p>
+<h2 id="更新配置">更新配置</h2>
+<p>修改后点击保存。关闭配置界面，右键更新IP核。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.6bh5wx731e.webp" alt="更新IP核"></p>
+<h2 id="添加CCC、OSC、SYSRESET模块">添加<code>CCC</code>、<code>OSC</code>、<code>SYSRESET</code>模块</h2>
+<p>选择Catalog菜单，搜索<code>CCC</code>、<code>OSC</code>、<code>SYSRESET</code>，添加到主界面中。双击或拖拽都可以添加。</p>
+<ol>
+<li>配置 FABRIC CCC</li>
+</ol>
+<p>修改<code>FCCC_0</code>参数。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.b8zs71vnq.webp" alt="FCCC_0参数"></p>
+<ol start="2">
+<li>配置时钟源</li>
+</ol>
+<p>选择Clock&amp;Management中的Chip Oscillators。修改<code>OSC_0</code>参数。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.231yn3mi3n.webp" alt="OSC_0参数"></p>
+<h2 id="添加HDL">添加HDL</h2>
+<ol>
+<li>
+<p>双击create HDL<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.7ax9d5o610.webp" alt="创建HDL"></p>
+</li>
+<li>
+<p>编辑并检查<code>.v</code>文件</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module led_light (</span><br><span class="line">    input  wire key,</span><br><span class="line">    output wire led</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">assign led = ~key; </span><br><span class="line"> </span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>进入Design Hierarchy，双击修改文件内容，拖动到smart design中。保存后，添加的HDL文件会自动添加到smart design中。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.5fkokk5dhm.webp" alt="添加HDL"></li>
+</ol>
+<p>若已经创建了仿真，新增加的也会自动添加到工程中。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.45rzul3vi.webp" alt="HDL自动添加到工程"></p>
+<div class="tip info"><p>若需要在仿真软件中添加信号线，则需要在仿真文件中添加信号端口</p>
+</div>
+<ol start="4">
+<li>添加信号</li>
+</ol>
+<p>将信号线添加到顶层。为后续添加管脚约束中能够找到端口。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.6ikdvg27wv.webp" alt="添加信号"></p>
+<h2 id="画布布线">画布布线</h2>
+<p>为IO口添加标签，将信号添加到顶层。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.8s3eburvus.webp" alt="IO添加标签"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.2ks0bot1y9.webp" alt="布线"></p>
+<p>使用工具栏的连线工具进行连线，然后点击<code>generate Component</code>工具，即可生成配置。</p>
+<h1>添加仿真</h1>
+<ol>
+<li>在设计流中，右键smart design，创建一个仿真。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.58hgp3fra3.webp" alt="image"></li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.54xurdn956.webp" alt="image"></p>
+<ol start="2">
+<li>
+<p>在Stimulus Hierarchy中可以看到，顶层和单独的HDL文件，都被添加到工程了。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.2obmcgit8b.webp" alt="image"></p>
+</li>
+<li>
+<p>在设计流中双击仿真<code>Simlulate</code>，自动打开软件。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.6bh5zzfaj9.webp" alt="image"></p>
+</li>
+<li>
+<p>开始仿真测试。</p>
+</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.4ub0y8clf0.webp" alt="image"></p>
+<h1>编译工程</h1>
+<h2 id="添加管脚约束">添加管脚约束</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.39l9vpwi8e.webp" alt="编译顺序"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://github.com/KB-talk/picx-images-hosting/raw/master/Smartfusion2/image.7lk3399yp9.webp" alt="管脚约束"></p>
+<h1>文件构成</h1>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.6f0rwqwtc3.webp" alt="image"></p>
+<p>若后续生成Keil工程，则会新增加keil文件夹。</p>
+<h1>导出Keil工程</h1>
+<p>在使用ARM端（MSS）时，需要对MSS进行编程，因此，需要将工程导出为Keil工程。</p>
+<ol>
+<li>
+<p>双击<code>Handoff Design for Firmware Development -&gt; Configure Firmware Cores</code>，选择需要添加的库。</p>
+</li>
+<li>
+<p>双击<code>Export Firmware</code>，即可导出工程。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.9dd20o2a52.webp" alt="导出keil"></p>
+</li>
+<li>
+<p>打开工程，选择<code>.uvmpw</code>后缀的文件，即可打开工程。</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>首先编译工程文件，编译后，右键<code>_app文件夹</code>，将文件夹<code>Set as Active Project</code>。</p>
+</li>
+<li>
+<p>打开魔术刷，将设备改为<code>M2S010</code>。</p>
+</li>
+<li>
+<p>进入<code>Debug</code>，选择<code>Jlink</code>，开启<code>Reset and Run</code>，确认<code>M2Sxxx 256kB</code>。</p>
+</li>
+</ul>
+<h1>下载工程</h1>
+<ol>
+<li>
+<p>点击<code>Generate Bitstream</code>，生成需要下载的文件。</p>
+</li>
+<li>
+<p>将下载器连接开发板后，点击<code>Run PROGRAM Action</code>，进行下载。</p>
+</li>
+<li>
+<p>若需要生成烧录文件，点击<code>Export Bitstream</code>，可以导出<code>.stp</code>和<code>.bat</code>文件。</p>
+</li>
+</ol>
+<h1>常见错误</h1>
+<div class="tip error"><p>在我们更换硬件资源，比如删除了串口后，重新执行synthesis -&gt; compile时，会出现报错。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.54xuqtvtcv.webp" alt="引脚错误"><br>
+分析错误信息得之，网络列表中引脚MMUART_0_RXD_F2M -pinname T18错误。<br>
+解决方法为，打开<code>I/O Constraint -&gt; constraint \io\program_sb.io.pdc</code>，手动删除被移除的引脚信息，重新编译即可。</p>
+</div>
+<div class="tip error"><p>当有时smart design配置正确，且synthesize通过时，但在编译时出现了报错。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.13lvcum34o.webp" alt="image"><br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.3gohu1zdjz.webp" alt="image"><br>
+可能是自己添加的HDL的引脚没有被操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//修改前</span><br><span class="line">//assign port3 = port1;</span><br><span class="line">//assign port4 = port2;</span><br><span class="line">//修改后</span><br><span class="line">assign port3 = port1;</span><br><span class="line">assign port4 = port2;</span><br></pre></td></tr></table></figure>
+<p>添加引脚操作后，即可解决报错问题。</p>
+</div>
+<div class="tip error"><p>若添加了自己的HDL，需要将smart design设置为Root，及顶层，这样才能保证在管教约束时，自己定义的HDL核生成的引脚的引脚都能被检测到。<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://KB-talk.github.io/picx-images-hosting/Smartfusion2/image.3yejinekgl.webp" alt="image"></p>
+</div>
+<div class="tip error"><p>在编辑HDL时，注意名称和引脚名称不能够相同，否则会出现<code>Generation of'program failed.See message window for details.</code>错误。<br>
+错误代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module led (</span><br><span class="line">    input  wire key,</span><br><span class="line">    output wire led</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">assign led = ~key; </span><br><span class="line"> </span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure></div></article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/certen.65zy20o0kd00.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/certen.65zy20o0kd00.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">张凯博</div><div class="post-copyright__author_desc">首页</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://kb-talk.github.io/2025/01/16/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://kb-talk.github.io/2025/01/16/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/')">Smartfusion2开发学习记录-开发环境搭建</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://kb-talk.github.io/2025/01/16/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Smartfusion2开发学习记录-开发环境搭建&amp;url=https://kb-talk.github.io/2025/01/16/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&amp;pic=https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/40.191mbxr26xmo.jpg?_r_=de009473-94b5-2ce0-385b-42f4fd970a2c" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://kb-talk.github.io" target="_blank">凯博の博客</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Smartfusion2/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Smartfusion2<span class="tagsPageCount">2</span></a><a class="post-meta__box__tags" href="/tags/FPGA/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>FPGA<span class="tagsPageCount">2</span></a><a class="post-meta__box__tags" href="/tags/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>创建项目<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/10.5sw0aemzqfo0.jpg?_r_=fe306b67-9d06-7d69-51e5-f9d86617ee2f" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/11/24/%E5%8F%8C%E7%9B%AE%E7%9B%B8%E6%9C%BA%E6%A0%87%E5%AE%9A/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/25.2ejwrfaf3wbo.jpg?_r_=c41e3699-1455-f403-26fe-2f14a96847a7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">双目相机标定</div></div></a></div><div class="next-post pull-right"><a href="/2025/01/18/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E7%BB%BC%E5%90%88%E6%B5%8B%E8%AF%95/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/10.5sw0aemzqfo0.jpg?_r_=fe306b67-9d06-7d69-51e5-f9d86617ee2f" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Smartfusion2开发学习记录-综合测试</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2025/01/18/Smartfusion2%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E7%BB%BC%E5%90%88%E6%B5%8B%E8%AF%95/" title="Smartfusion2开发学习记录-综合测试"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/10.5sw0aemzqfo0.jpg?_r_=fe306b67-9d06-7d69-51e5-f9d86617ee2f" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-01-18</div><div class="title">Smartfusion2开发学习记录-综合测试</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/certen.65zy20o0kd00.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">张凯博</h1><div class="author-info__desc">首页</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/KB-talk" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://mail.163.com/js6/main.jsp?sid=VACfcNVtyLTmJmVYbRttAEwqCqUOLriO&amp;df=mail163_letter#module=welcome.WelcomeModule%7C%7B%7D" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Libero-SoC-v11-9%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5"><span class="toc-number">1.1.</span> <span class="toc-text">Libero SoC v11.9下载链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8D%E8%B4%B9license%E7%94%B3%E8%AF%B7"><span class="toc-number">1.2.</span> <span class="toc-text">免费license申请</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">新建工程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%B7%A5%E7%A8%8B%E4%BF%A1%E6%81%AF"><span class="toc-number">2.1.</span> <span class="toc-text">修改工程信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%8A%AF%E7%89%87%E5%9E%8B%E5%8F%B7"><span class="toc-number">2.2.</span> <span class="toc-text">选择芯片型号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%99%A8%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">配置器件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A0%B7%E7%89%88%E4%B8%8E%E5%90%91%E5%AF%BC%E9%80%89%E6%8B%A9"><span class="toc-number">2.4.</span> <span class="toc-text">设计样版与向导选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%9A%84%E5%B7%A5%E7%A8%8B"><span class="toc-number">2.5.</span> <span class="toc-text">生成的工程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">配置MSS系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9MSS%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9D%97"><span class="toc-number">3.1.</span> <span class="toc-text">选择MSS系统中的使用模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEMSS-CCC%E6%A8%A1%E5%9D%97"><span class="toc-number">3.2.</span> <span class="toc-text">设置MSS_CCC模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AERESET-Controller%E6%A8%A1%E5%9D%97"><span class="toc-number">3.3.</span> <span class="toc-text">设置RESET_Controller模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEIO%E5%8F%A3%E6%A8%A1%E5%9D%97"><span class="toc-number">3.4.</span> <span class="toc-text">设置IO口模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E9%85%8D%E7%BD%AE"><span class="toc-number">3.5.</span> <span class="toc-text">更新配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0CCC%E3%80%81OSC%E3%80%81SYSRESET%E6%A8%A1%E5%9D%97"><span class="toc-number">3.6.</span> <span class="toc-text">添加CCC、OSC、SYSRESET模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0HDL"><span class="toc-number">3.7.</span> <span class="toc-text">添加HDL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%B8%83%E5%B8%83%E7%BA%BF"><span class="toc-number">3.8.</span> <span class="toc-text">画布布线</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">添加仿真</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">编译工程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%AE%A1%E8%84%9A%E7%BA%A6%E6%9D%9F"><span class="toc-number">5.1.</span> <span class="toc-text">添加管脚约束</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">文件构成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">导出Keil工程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">下载工程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">常见错误</span></a></li></ol></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:zkb13258847839@163.com" title="email"><i class="anzhiyufont anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/7790386306" title="微博"><i class="anzhiyufont anzhiyufont anzhiyu-icon-weibo"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/certen.65zy20o0kd00.jpg" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/KB-talk" title="Github"><i class="anzhiyufont anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://v.douyin.com/UjjojH3/" title="抖音"><i class="anzhiyufont anzhiyufont anzhiyu-icon-tiktok"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="首页" href="/">首页</a><a class="footer-item" title="文档" href="https://kb-talk.github.io/docs/">文档</a></div></div><div class="footer-group"><div class="footer-title">工程</div><div class="footer-links"><a class="footer-item" title="C++" target="_blank" rel="noopener" href="https://github.com/KB-talk/CPP">C++</a></div></div><div class="footer-group"><div class="footer-title">论文</div><div class="footer-links"><a class="footer-item" title="知网" target="_blank" rel="noopener" href="https://www.cnki.net">知网</a><a class="footer-item" title="论文下载" target="_blank" rel="noopener" href="http://lib.shutong121.com">论文下载</a></div></div><div class="footer-group"><div class="footer-title">工具箱</div><div class="footer-links"><a class="footer-item" title="嘉立创EDA" target="_blank" rel="noopener" href="https://pro.lceda.cn/editor">嘉立创EDA</a><a class="footer-item" title="Latex公式" target="_blank" rel="noopener" href="https://www.latexlive.com">Latex公式</a><a class="footer-item" title="geogebra" target="_blank" rel="noopener" href="https://www.geogebra.org/download">geogebra</a><a class="footer-item" title="Draw.io" target="_blank" rel="noopener" href="https://www.drawio.com">Draw.io</a><a class="footer-item" title="Excalidraw" target="_blank" rel="noopener" href="https://excalidraw.com/">Excalidraw</a><a class="footer-item" title="iCraft Editor" target="_blank" rel="noopener" href="https://icraft.gantcloud.com/zh-CN">iCraft Editor</a></div></div><div class="footer-group"><div class="footer-title">关于</div><div class="footer-links"><a class="footer-item" title="个人介绍" href="/about/">个人介绍</a></div></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2024 - 2025 By <a class="footer-bar-link" href="/" title="张凯博" target="_blank">张凯博</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="https://kb-talk.github.io/docs/" title="文档管理">文档管理</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">8</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/KB-talk" title="GitHub"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/github.4uotb3n6utq0.jpg" alt="GitHub"/><span class="back-menu-item-text">GitHub</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">工具</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://picx.xpoet.cn/#/upload" title="Picx图床管理"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.statically.io/gh/KB-talk/picx-images-hosting@master/img/logo.4sjf6ayt8740.png" alt="Picx图床管理"/><span class="back-menu-item-text">Picx图床管理</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.iconfont.cn" title="Icon图标"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/icon.35tedh3uxvpc.webp" alt="Icon图标"/><span class="back-menu-item-text">Icon图标</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">文档</div><div class="back-menu-list"><a class="back-menu-item" href="https://kb-talk.github.io/docs/" title="文档管理"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/KB-talk/picx-images-hosting@master/img/logo.1p5rqa10pxsw.webp" alt="文档管理"/><span class="back-menu-item-text">文档管理</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 软件链接</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="https://kb-talk.github.io/docs/"><i class="anzhiyufont anzhiyu-icon-book faa-tada" style="font-size: 0.9em;"></i><span> 文档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Blender/" style="font-size: 0.88rem;">Blender<sup>1</sup></a><a href="/tags/Clash/" style="font-size: 0.88rem;">Clash<sup>1</sup></a><a href="/tags/FPGA/" style="font-size: 0.88rem;">FPGA<sup>2</sup></a><a href="/tags/Fusion360/" style="font-size: 0.88rem;">Fusion360<sup>1</sup></a><a href="/tags/P2LR/" style="font-size: 0.88rem;">P2LR<sup>1</sup></a><a href="/tags/Smartfusion2/" style="font-size: 0.88rem;">Smartfusion2<sup>2</sup></a><a href="/tags/adobe/" style="font-size: 0.88rem;">adobe<sup>1</sup></a><a href="/tags/brew%E5%8A%A0%E9%80%9F/" style="font-size: 0.88rem;">brew加速<sup>1</sup></a><a href="/tags/latex/" style="font-size: 0.88rem;">latex<sup>1</sup></a><a href="/tags/platformIO/" style="font-size: 0.88rem;">platformIO<sup>1</sup></a><a href="/tags/ps/" style="font-size: 0.88rem;">ps<sup>1</sup></a><a href="/tags/pytorch/" style="font-size: 0.88rem;">pytorch<sup>1</sup></a><a href="/tags/vant/" style="font-size: 0.88rem;">vant<sup>1</sup></a><a href="/tags/zetero/" style="font-size: 0.88rem;">zetero<sup>1</sup></a><a href="/tags/%E4%BC%AA%E6%A0%87%E7%AD%BE/" style="font-size: 0.88rem;">伪标签<sup>1</sup></a><a href="/tags/%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" style="font-size: 0.88rem;">创建项目<sup>1</sup></a><a href="/tags/%E5%8F%8C%E7%9B%AE%E7%9B%B8%E6%9C%BA%E6%A0%87%E5%AE%9A/" style="font-size: 0.88rem;">双目相机标定<sup>1</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 0.88rem;">图床<sup>1</sup></a><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 0.88rem;">小程序<sup>1</sup></a><a href="/tags/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">无监督学习<sup>1</sup></a><a href="/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE%E7%BB%98%E5%88%B6/" style="font-size: 0.88rem;">流程图绘制<sup>1</sup></a><a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">深度学习<sup>1</sup></a><a href="/tags/%E7%BB%BC%E5%90%88%E5%AE%9E%E9%AA%8C/" style="font-size: 0.88rem;">综合实验<sup>1</sup></a><a href="/tags/%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/" style="font-size: 0.88rem;">行人重识别<sup>1</sup></a><a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 0.88rem;">论文<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 0.88rem;">软件<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("07/01/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 张凯博 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="https://cdn.cbd.int/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.js"></script><script src="https://cdn.cbd.int/instantsearch.js@4.60.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '6ZnqBc4TpzYIUNR3YxT9X3OH-gzGzoHsz',
+      appKey: 'tDjZacCEOFwKbujgcu6clD38',
+      avatar: 'mp',
+      serverURLs: '',
+      emojiMaps: "{\n  \"tv_doge\": \"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png\",\n  \"tv_亲亲\": \"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png\",\n  \"tv_偷笑\": \"bb690d4107620f1c15cff29509db529a73aee261.png\",\n  \"tv_再见\": \"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png\",\n  \"tv_冷漠\": \"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png\",\n  \"tv_发怒\": \"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png\",\n  \"tv_发财\": \"34db290afd2963723c6eb3c4560667db7253a21a.png\",\n  \"tv_可爱\": \"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png\",\n  \"tv_吐血\": \"09dd16a7aa59b77baa1155d47484409624470c77.png\",\n  \"tv_呆\": \"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png\",\n  \"tv_呕吐\": \"9f996894a39e282ccf5e66856af49483f81870f3.png\",\n  \"tv_困\": \"241ee304e44c0af029adceb294399391e4737ef2.png\",\n  \"tv_坏笑\": \"1f0b87f731a671079842116e0991c91c2c88645a.png\",\n  \"tv_大佬\": \"093c1e2c490161aca397afc45573c877cdead616.png\",\n  \"tv_大哭\": \"23269aeb35f99daee28dda129676f6e9ea87934f.png\",\n  \"tv_委屈\": \"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png\",\n  \"tv_害羞\": \"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png\",\n  \"tv_尴尬\": \"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png\",\n  \"tv_微笑\": \"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png\",\n  \"tv_思考\": \"90cf159733e558137ed20aa04d09964436f618a1.png\",\n  \"tv_惊吓\": \"0d15c7e2ee58e935adc6a7193ee042388adc22af.png\"\n}",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script src="https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=mp'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://6ZnqBc4T.api.lncldglobal.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": '6ZnqBc4TpzYIUNR3YxT9X3OH-gzGzoHsz',
+        "X-LC-Key": 'tDjZacCEOFwKbujgcu6clD38',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
